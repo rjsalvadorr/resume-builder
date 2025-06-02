@@ -8,9 +8,9 @@
 | contact_info | list | List of ContactItems |
 | objective | str | Career objectives |
 | skills_qualifications | list | List of strings representing main skill areas |
-| work_experience | list | List of ExpEduItems |
-| projects | list | List of ExpEduItems |
-| education | list | List of ExpEduItems |
+| work_experience | list | List of ExperienceItem |
+| projects | list | List of ExperienceItem |
+| education | list | List of ExperienceItem |
 | about | str | More details about yourself |
 
 ## ContactItem
@@ -20,7 +20,7 @@
 | contact_type | str | Contact type (email/phone/website/linkedin/github) |
 | contact_info | str | Actual info |
 
-## ExpEduItem
+## ExperienceItem
 
 | property | type | description |
 | --- | --- | --- |

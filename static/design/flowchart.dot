@@ -2,15 +2,18 @@ digraph {
     node [shape = box;];
     
     subgraph cluster_0 {
-        node [style = filled; color = lightgrey;];
-        resumeParser -> resumeBuilder [label = "complete\ndata set";];
         label = "resume_builder";
         color = black;
+        bgcolor = grey90;
+        penwidth = 2;
+        node [style = filled; color = grey80;];
+        
+        resumeParser -> resumeBuilder [label = "complete\ndata set";];
     }
     
     subgraph cluster_1 {
         label = "Data";
-        color = black;
+        color = blue;
         node [color = blue;];
         resumeData -> resumeParser [color = blue;];
         contactsData -> resumeParser [color = blue;];

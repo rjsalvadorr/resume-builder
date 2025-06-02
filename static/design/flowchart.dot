@@ -1,0 +1,31 @@
+digraph {
+    node [shape = box;];
+    
+    subgraph cluster_0 {
+        node [style = filled; color = lightgrey;];
+        resumeParser -> resumeBuilder [label = "complete\ndata set";];
+        label = "resume_builder";
+        color = black;
+    }
+    
+    subgraph cluster_1 {
+        label = "Data";
+        color = black;
+        node [color = blue;];
+        resumeData -> resumeParser [color = blue;];
+        contactsData -> resumeParser [color = blue;];
+        experienceData -> resumeParser [color = blue;];
+    }
+    
+    resumeBuilder -> outputMarkdown [color = darkgreen;];
+    resumeBuilder -> outputTxt [color = darkgreen;];
+    resumeBuilder -> outputHtml [color = darkgreen;];
+    
+    resumeData [label = "resume.json";shape = cylinder;fillcolor = grey;];
+    contactsData [label = "contacts.json";shape = cylinder;fillcolor = grey;];
+    experienceData [label = "experience.json";shape = cylinder;fillcolor = grey;];
+    
+    outputMarkdown [label = "md/";shape = folder;color = darkgreen;];
+    outputTxt [label = "txt/";shape = folder;color = darkgreen;];
+    outputHtml [label = "html/";shape = folder;color = darkgreen;];
+}

@@ -11,10 +11,14 @@ def parse_resume():
     experience_data = open("data/experience.json", "r", encoding="utf-8")
     cover_data = open("data/cover.json", "r", encoding="utf-8")
 
+    print(resume_data)
+
     resume_info = json.load(resume_data)
     contact_info = json.load(contact_data)
     experience_info = json.load(experience_data)
     cover_info = json.load(cover_data)
+
+    print(resume_info)
 
     # ---------------
     # DEFINITIONS
@@ -33,5 +37,7 @@ def parse_resume():
         "experience": experience_info,
         "cover": cover_info,
     }
+
+    print(complete_resume_info)
 
     return complete_resume_info

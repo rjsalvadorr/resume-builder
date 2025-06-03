@@ -1,32 +1,28 @@
 digraph {
+    label = "\nresume-builder\nData Flow";
     node [shape = box;];
     
     subgraph cluster_0 {
         label = "resume_builder";
         color = black;
-        bgcolor = grey90;
         penwidth = 2;
-        node [style = filled; color = grey80;];
         
         resumeParser -> resumeBuilder [label = "complete\ndata set";];
     }
     
-    subgraph cluster_1 {
-        label = "Data";
-        color = blue;
-        node [color = blue;];
-        resumeData -> resumeParser [color = blue;];
-        contactsData -> resumeParser [color = blue;];
-        experienceData -> resumeParser [color = blue;];
-    }
+    resumeData -> resumeParser [color = blue;];
+    contactsData -> resumeParser [color = blue;];
+    experienceData -> resumeParser [color = blue;];
     
     resumeBuilder -> outputMarkdown [color = darkgreen;];
     resumeBuilder -> outputTxt [color = darkgreen;];
     resumeBuilder -> outputHtml [color = darkgreen;];
     
-    resumeData [label = "resume.json";shape = cylinder;fillcolor = grey;];
-    contactsData [label = "contacts.json";shape = cylinder;fillcolor = grey;];
-    experienceData [label = "experience.json";shape = cylinder;fillcolor = grey;];
+    resumeData [label = "resume.json";shape = cylinder;color = blue;];
+    contactsData [label = "contacts.json";shape = cylinder;color = blue;];
+    experienceData [label = "experience.json";shape = cylinder;color = blue;];
+
+    resumeBuilder [color = darkgreen;];
     
     outputMarkdown [label = "md/";shape = folder;color = darkgreen;];
     outputTxt [label = "txt/";shape = folder;color = darkgreen;];

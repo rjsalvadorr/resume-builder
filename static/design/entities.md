@@ -13,6 +13,12 @@
 | education | list | List of ExperienceItem |
 | about | str | More details about yourself |
 
+## CoverLetter
+
+| property | type | description |
+| --- | --- | --- |
+| ting | str | ... |
+
 ## ContactItem
 
 | property | type | description |

@@ -26,7 +26,11 @@
 | --- | --- | --- |
 | org_name | str | Name of employer/school |
 | org_location | str | Location of employer/school |
+| exp_type | str | Experience type (work/school/project) |
+| exp_role | str | Job title or role |
 | start_date | datetime | Start date |
 | end_date | datetime | End date |
 | skills | list | List of strings describing skills that were gained |
 | highlights | list | List of strings describing the role/program |
+| education_cred | str | Education credential (for `education` type) |
+| project_name | str | Project name (for `project` type) |

@@ -1,0 +1,95 @@
+{
+    "experience": [
+        {
+            "org_name": "Jonah Group",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Technical Developer",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "Intelex Technologies",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Technical Developer",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "Uncharted Software",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Technical Developer",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "Autodesk Construction Solutions",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Technical Developer",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "Konrad Group",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Technical Developer",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "Humber College",
+            "org_location": "Toronto, Canada",
+            "exp_type": "education",
+            "education_cred": "Ontario College Diploma (Computer Programmer)",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "George Brown College",
+            "org_location": "Toronto, Canada",
+            "exp_type": "education",
+            "education_cred": "Cont. Ed. Certificate (Architectural Tech)",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "BrainStation",
+            "org_location": "Toronto, Canada",
+            "exp_type": "education",
+            "education_cred": "UX Design Certificate",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        },
+        {
+            "org_name": "Salvador Workshop",
+            "org_location": "Toronto, Canada",
+            "exp_type": "project",
+            "project_name": "sw-jscad",
+            "exp_role": "Technical Developer",
+            "start_date": "",
+            "end_date": "",
+            "skills": [],
+            "highlights": []
+        }
+    ]
+}

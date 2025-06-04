@@ -4,7 +4,7 @@ import json
 def build_resume_full(complete_resume_info):
     print("build_resume_full()")
     print(complete_resume_info)
-    out_file_full = open("../../build/resume-full.html", "w", encoding="utf-8")
+    out_file_full = open("build/resume-full.html", "w", encoding="utf-8")
 
     # -----
     # Intro
@@ -23,23 +23,27 @@ def build_resume_full(complete_resume_info):
     # ------
     # Resume
 
-    print(complete_resume_info.resume)
-    out_file_full.write(complete_resume_info.resume)
+    print(complete_resume_info["resume"])
+    out_file_full.write(json.dumps(complete_resume_info["resume"]))
+    out_file_full.write("\n")
 
-    print(complete_resume_info.contact)
-    out_file_full.write(complete_resume_info.contact)
+    print(complete_resume_info["contact"])
+    out_file_full.write(json.dumps(complete_resume_info["contact"]))
+    out_file_full.write("\n")
 
     # -------------------------------
     # Experience, Education, Projects
 
-    print(complete_resume_info.experience)
-    out_file_full.write(complete_resume_info.experience)
+    print(complete_resume_info["experience"])
+    out_file_full.write(json.dumps(complete_resume_info["experience"]))
+    out_file_full.write("\n")
 
     # ------------
     # Cover Letter
 
-    print(complete_resume_info.cover)
-    out_file_full.write(complete_resume_info.cover)
+    print(complete_resume_info["cover"])
+    out_file_full.write(json.dumps(complete_resume_info["cover"]))
+    out_file_full.write("\n")
 
     # -------
     # CLEANUP
@@ -51,19 +55,19 @@ def build_resume_full(complete_resume_info):
 def build_resume_short(complete_resume_info):
     print("build_resume_short()")
     print(complete_resume_info)
-    out_file_short = open("../../build/resume-short.html", "w", encoding="utf-8")
+    out_file_short = open("build/resume-short.html", "w", encoding="utf-8")
     return 0
 
 
 def build_resume_tiny(complete_resume_info):
     print("build_resume_tiny()")
     print(complete_resume_info)
-    out_file_tiny = open("../../build/resume-tiny.html", "w", encoding="utf-8")
+    out_file_tiny = open("build/resume-tiny.html", "w", encoding="utf-8")
     return 0
 
 
 def build_cover_letter(complete_resume_info):
     print("build_cover_letter()")
     print(complete_resume_info)
-    out_file_cover = open("../../build/cover.html", "w", encoding="utf-8")
+    out_file_cover = open("build/cover.html", "w", encoding="utf-8")
     return 0

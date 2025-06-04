@@ -15,7 +15,7 @@ def print_splash(openfile, filetype="html"):
 
 
 def build_resume_full(complete_resume_info):
-    print("build_resume_full()")
+    print("\nbuild_resume_full()\n")
     print(complete_resume_info)
     out_file_full = open("build/resume-full.html", "w", encoding="utf-8")
 
@@ -33,7 +33,7 @@ def build_resume_full(complete_resume_info):
     out_file_full.write("\n")
 
     # -------
-    # CLEANUP
+    # Cleanup
     # -------
 
     out_file_full.close()
@@ -41,21 +41,21 @@ def build_resume_full(complete_resume_info):
 
 
 def build_resume_short(complete_resume_info):
-    print("build_resume_short()")
+    print("\nbuild_resume_short()\n")
     print(complete_resume_info)
     out_file_short = open("build/resume-short.html", "w", encoding="utf-8")
     return 0
 
 
 def build_resume_tiny(complete_resume_info):
-    print("build_resume_tiny()")
+    print("\nbuild_resume_tiny()\n")
     print(complete_resume_info)
     out_file_tiny = open("build/resume-tiny.html", "w", encoding="utf-8")
     return 0
 
 
 def build_cover_letter(complete_resume_info):
-    print("build_cover_letter()")
+    print("\nbuild_cover_letter()\n")
     print(complete_resume_info)
     out_file_cover = open("build/cover.html", "w", encoding="utf-8")
 
@@ -71,4 +71,10 @@ def build_cover_letter(complete_resume_info):
     print(cover_obj)
     out_file_cover.write(cover_obj)
     out_file_cover.write("\n")
+
+    # -------
+    # Cleanup
+    # -------
+
+    out_file_cover.close()
     return 0

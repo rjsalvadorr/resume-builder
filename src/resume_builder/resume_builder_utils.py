@@ -23,7 +23,7 @@ def format_phone_num(phone_num, type="txt"):
     output_num = f"({area_code}) {mid} {end}"
 
     if type == "html":
-        output_num = f"+{country_code}{area_code}{phone_num}"
+        output_num = f"+{country_code}{phone_num}"
 
     return output_num
 

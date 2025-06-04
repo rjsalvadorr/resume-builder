@@ -1,14 +1,7 @@
 import json
 
 
-def build_resume_full(complete_resume_info):
-    print("build_resume_full()")
-    print(complete_resume_info)
-    out_file_full = open("build/resume-full.html", "w", encoding="utf-8")
-
-    # -----
-    # Intro
-
+def print_splash(openfile, filetype="html"):
     splash_graphic = "\n"
     splash_graphic += "<!--------------------------------\n"
     splash_graphic += "   R E S U M E    B U I L D E R   \n"
@@ -18,31 +11,25 @@ def build_resume_full(complete_resume_info):
     splash_graphic += "\n"
 
     print(splash_graphic)
-    out_file_full.write(splash_graphic)
+    openfile.write(splash_graphic)
+
+
+def build_resume_full(complete_resume_info):
+    print("build_resume_full()")
+    print(complete_resume_info)
+    out_file_full = open("build/resume-full.html", "w", encoding="utf-8")
+
+    # -----
+    # Intro
+
+    print_splash(out_file_full)
 
     # ------
     # Resume
 
-    print(complete_resume_info["resume"])
-    out_file_full.write(json.dumps(complete_resume_info["resume"]))
-    out_file_full.write("\n")
-
-    print(complete_resume_info["contact"])
-    out_file_full.write(json.dumps(complete_resume_info["contact"]))
-    out_file_full.write("\n")
-
-    # -------------------------------
-    # Experience, Education, Projects
-
-    print(complete_resume_info["experience"])
-    out_file_full.write(json.dumps(complete_resume_info["experience"]))
-    out_file_full.write("\n")
-
-    # ------------
-    # Cover Letter
-
-    print(complete_resume_info["cover"])
-    out_file_full.write(json.dumps(complete_resume_info["cover"]))
+    resume_obj = json.dumps(complete_resume_info["resume"], indent=2)
+    print(resume_obj)
+    out_file_full.write(resume_obj)
     out_file_full.write("\n")
 
     # -------
@@ -50,6 +37,7 @@ def build_resume_full(complete_resume_info):
     # -------
 
     out_file_full.close()
+    return 0
 
 
 def build_resume_short(complete_resume_info):
@@ -70,4 +58,17 @@ def build_cover_letter(complete_resume_info):
     print("build_cover_letter()")
     print(complete_resume_info)
     out_file_cover = open("build/cover.html", "w", encoding="utf-8")
+
+    # -----
+    # Intro
+
+    print_splash(out_file_cover)
+
+    # ------------
+    # Cover Letter
+
+    cover_obj = json.dumps(complete_resume_info["cover"], indent=2)
+    print(cover_obj)
+    out_file_cover.write(cover_obj)
+    out_file_cover.write("\n")
     return 0

@@ -4,6 +4,7 @@
 
 | property | type | description |
 | --- | --- | --- |
+| name | str | Your name |
 | subtitle | str | Title or tagline under name |
 | contact_info | list | List of ContactItems |
 | objective | str | Career objectives |

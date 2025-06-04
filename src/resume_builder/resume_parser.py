@@ -7,14 +7,14 @@ def parse_resume():
     # -------------
 
     resume_data = open("data/resume.json", "r", encoding="utf-8")
-    contact_data = open("data/contacts.json", "r", encoding="utf-8")
+    contacts_data = open("data/contacts.json", "r", encoding="utf-8")
     experience_data = open("data/experience.json", "r", encoding="utf-8")
     cover_data = open("data/cover.json", "r", encoding="utf-8")
 
     # print(resume_data)
 
     resume_info = json.load(resume_data)
-    contact_info = json.load(contact_data)
+    contacts_info = json.load(contacts_data)
     experience_info = json.load(experience_data)
     cover_info = json.load(cover_data)
 
@@ -32,11 +32,13 @@ def parse_resume():
     }
 
     complete_resume_info = {
-        "resume": resume_info,
-        "contact": contact_info,
-        "experience": experience_info,
+        "resume": {
+            "contacts": contacts_info["contacts"],
+            "experience": experience_info["experience"],
+        },
         "cover": cover_info,
     }
+    complete_resume_info["resume"].update(resume_info)
 
     print(complete_resume_info)
 

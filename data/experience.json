@@ -1,95 +1,196 @@
 {
-    "experience": [
+    "work_experience": [
         {
             "org_name": "Jonah Group",
             "org_location": "Toronto, Canada",
             "exp_type": "work",
             "exp_role": "Technical Developer",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "start_date": "2014-09-15",
+            "end_date": "2016-10-15",
+            "skills": [
+                "jQuery",
+                "Java/J2EE",
+                "Struts",
+                "Spring",
+                "Hibernate",
+                "Oracle 11g",
+                "Jenkins"
+            ],
+            "highlights": [
+                "Built webpages allowing car dealers to offer online credit applications. This linked their users to a system with 18,000+ dealerships with 1,400+ finance sources.",
+                "Ensured that webpages conformed to the responsive visual specs, and is usable on several browsers and devices."
+            ]
         },
         {
             "org_name": "Intelex Technologies",
             "org_location": "Toronto, Canada",
             "exp_type": "work",
             "exp_role": "Technical Developer",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "start_date": "2017-06-15",
+            "end_date": "2019-02-15",
+            "skills": [
+                "React",
+                ".NET",
+                "SQL Server",
+                "Jenkins"
+            ],
+            "highlights": [
+                "Helped build a new React UI on a legacy app for the EHSQ industry. This allowed health and safety professionals to share industry knowledge about Intelex tools.",
+                "Focused on code quality standards as the codebase grew. Appointed to a working group that wrote guidelines for code style and structure, which proved useful in refactoring."
+            ]
         },
         {
             "org_name": "Uncharted Software",
             "org_location": "Toronto, Canada",
             "exp_type": "work",
             "exp_role": "Technical Developer",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "start_date": "2019-11-15",
+            "end_date": "2021-04-15",
+            "skills": [
+                "Ember.js",
+                "Cytoscape",
+                "Node.js",
+                "Express.js",
+                "Python",
+                "AWS",
+                "Docker Microservices"
+            ],
+            "highlights": [
+                "Worked on Causeworks, a research project featuring graph visualizations that uncovered insights in complex scenarios.",
+                "Integrated a graph analysis module developed at Virginia Tech. This module described a scenario model with natural language for less technical users.",
+                "Reworked front-end components to align the UI closer to the company design system, reduce UX jankiness, and render visual data more effectively."
+            ]
+        },
+        {
+            "org_name": "Publicis Sapient",
+            "org_location": "Toronto, Canada (Remote)",
+            "exp_type": "work",
+            "exp_role": "Senior Associate, Experience Technology",
+            "start_date": "2022-05-15",
+            "end_date": "2022-09-15",
+            "skills": [
+                "React",
+                "Next.js",
+                "Nx",
+                "Typescript",
+                "Storybook",
+                "AEM"
+            ],
+            "highlights": [
+                "As part of the kick-off dev team, helped lay the technical foundations of a forward-looking app for a leading healthcare provider. These foundations allowed for rapid component development even while dependent design system assets lagged in delivery."
+            ]
         },
         {
             "org_name": "Autodesk Construction Solutions",
-            "org_location": "Toronto, Canada",
+            "org_location": "Toronto, Canada (Remote)",
             "exp_type": "work",
-            "exp_role": "Technical Developer",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "exp_role": "Senior Software Engineer",
+            "start_date": "2022-11-15",
+            "end_date": "2024-01-15",
+            "skills": [
+                "React",
+                "Node.js",
+                "Typescript",
+                "Storybook",
+                "Revit",
+                "ADSK Viewer/Forge/LMV"
+            ],
+            "highlights": [
+                "Worked in the team behind Autodesk Takeoff, a web-based takeoff and estimation tool for 2D sheets and 3D models.",
+                "Focused on improving the app's UX through implementing new functionality, reworking existing elements, or refactoring under the hood.",
+                "Leveraged in-house component libraries to build UI modules. Collaborated with design system experts to keep implementation consistent with the overall Autodesk Construction Cloud platform."
+            ]
         },
         {
             "org_name": "Konrad Group",
-            "org_location": "Toronto, Canada",
+            "org_location": "Toronto, Canada (Hybrid)",
             "exp_type": "work",
-            "exp_role": "Technical Developer",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
-        },
+            "exp_role": "Senior Software Developer",
+            "start_date": "2024-06-15",
+            "end_date": "2024-11-15",
+            "skills": [
+                "Azure Cognitive Services",
+                "Nest"
+            ],
+            "highlights": [
+                "Partnered with a financial transaction processor working closely with the \"Big Five\" Canadian banks.",
+                "Maintained and upgraded cloud apps which leverage Azure Cognitive Services for anti-fraud verification."
+            ]
+        }
+    ],
+    "education": [
         {
             "org_name": "Humber College",
             "org_location": "Toronto, Canada",
             "exp_type": "education",
             "education_cred": "Ontario College Diploma (Computer Programmer)",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "start_date": "2012-09-15",
+            "end_date": "2014-04-15",
+            "skills": [
+                "Java",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Oracle 11g",
+                "Git"
+            ],
+            "highlights": [
+                "Learned the fundamental principles of software engineering and how to work well in a team."
+            ]
         },
         {
             "org_name": "George Brown College",
             "org_location": "Toronto, Canada",
             "exp_type": "education",
             "education_cred": "Cont. Ed. Certificate (Architectural Tech)",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "start_date": "2021-09-15",
+            "end_date": "2024-04-15",
+            "skills": [
+                "Revit",
+                "AutoCAD",
+                "Sketchup",
+                "Adobe Illustrator & Photoshop"
+            ],
+            "highlights": [
+                "Learned to work with 2D and 3D graphics at a demanding level of precision",
+                "Helped start a student network for architectural/interior design students (Designer/Webmaster, Architectural Studies Collective)"
+            ]
         },
         {
             "org_name": "BrainStation",
             "org_location": "Toronto, Canada",
             "exp_type": "education",
             "education_cred": "UX Design Certificate",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
-        },
+            "start_date": "2024-07-15",
+            "end_date": "2024-09-15",
+            "skills": [
+                "Figma"
+            ],
+            "highlights": [
+                "Learned industry-standard processes for UX design (User interviews and testing, Wireframing, UI design, etc).",
+                "Implemented the full UX process in a final project: designing an app for community volunteering."
+            ]
+        }
+    ],
+    "projects": [
         {
             "org_name": "Salvador Workshop",
             "org_location": "Toronto, Canada",
             "exp_type": "project",
             "project_name": "sw-jscad",
             "exp_role": "Technical Developer",
-            "start_date": "",
-            "end_date": "",
-            "skills": [],
-            "highlights": []
+            "start_date": "2025-01-15",
+            "end_date": null,
+            "skills": [
+                "npm",
+                "3D Modeling",
+                "CAD/CAM Software",
+                "Open Source Development"
+            ],
+            "highlights": [
+                "sw-jscad is an open-source NPM library that extends JSCAD, which can create parametric 2D and 3D CAD designs with JavaScript code.",
+                "The library is in active development to support design efforts for my family's side business."
+            ]
         }
     ]
 }

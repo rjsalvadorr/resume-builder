@@ -33,8 +33,10 @@ def parse_resume():
 
     complete_resume_info = {
         "resume": {
-            "contacts": contacts_info["contacts"],
-            "experience": experience_info["experience"],
+            "contact_info": contacts_info["contacts"],
+            "work_experience": experience_info["work_experience"],
+            "education": experience_info["education"],
+            "projects": experience_info["projects"],
         },
         "cover": cover_info,
     }

@@ -1,24 +1,24 @@
 {
     "contacts": [
         {
-            "contact_type": "email",
-            "contact_info": "salvador.workshop@gmail.com"
+            "type": "email",
+            "info": "salvador.workshop@gmail.com"
         },
         {
-            "contact_type": "website",
-            "contact_info": "rjsalvadorr.com"
+            "type": "website",
+            "info": "https://rjsalvadorr.com"
         },
         {
-            "contact_type": "github",
-            "contact_info": "github.com/rjsalvadorr"
+            "type": "github",
+            "info": "https://github.com/rjsalvadorr"
         },
         {
-            "contact_type": "linkedin",
-            "contact_info": "linkedin.com/in/rjsalvadorr"
+            "type": "linkedin",
+            "info": "https://linkedin.com/in/rjsalvadorr"
         },
         {
-            "contact_type": "phone",
-            "contact_info": "(647) 460 4027"
+            "type": "phone",
+            "info": "6474604027"
         }
     ]
 }

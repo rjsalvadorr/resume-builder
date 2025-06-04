@@ -42,6 +42,6 @@ def parse_resume():
     }
     complete_resume_info["resume"].update(resume_info)
 
-    print(complete_resume_info)
+    # print(complete_resume_info)
 
     return complete_resume_info

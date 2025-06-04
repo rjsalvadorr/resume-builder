@@ -1,4 +1,4 @@
-from .resume_builder_utils import print_splash, format_phone_num
+from .resume_builder_utils import print_splash, format_phone_num, format_date
 
 
 def build_resume_full_md(resume_info):
@@ -55,8 +55,11 @@ def build_resume_full_md(resume_info):
             f"### {work_exp["exp_role"]}, {work_exp["org_name"]}\n\n"
         )
 
-        end_date_str = "Present" if not work_exp["end_date"] else work_exp["end_date"]
-        out_file_full_md.write(f"_{work_exp["start_date"]} — {end_date_str}  \n")
+        start_date_str = format_date(work_exp["start_date"])
+        end_date_str = (
+            "Present" if not work_exp["end_date"] else format_date(work_exp["end_date"])
+        )
+        out_file_full_md.write(f"_{start_date_str} — {end_date_str}  \n")
         out_file_full_md.write(f"{work_exp["org_location"]}  \n")
         out_file_full_md.write(
             f"Core technologies — {', '.join(work_exp["skills"])}_\n\n"
@@ -74,8 +77,11 @@ def build_resume_full_md(resume_info):
         out_file_full_md.write(
             f"### {proj_exp["project_name"]}, {proj_exp["org_name"]}\n\n"
         )
-        end_date_str = "Present" if not proj_exp["end_date"] else proj_exp["end_date"]
-        out_file_full_md.write(f"_{proj_exp["start_date"]} — {end_date_str}  \n")
+        start_date_str = format_date(proj_exp["start_date"])
+        end_date_str = (
+            "Present" if not proj_exp["end_date"] else format_date(proj_exp["end_date"])
+        )
+        out_file_full_md.write(f"_{start_date_str} — {end_date_str}  \n")
         out_file_full_md.write(f"{proj_exp["org_location"]}  \n")
         out_file_full_md.write(f"Core skills — {', '.join(proj_exp["skills"])}_\n\n")
         for highlight in proj_exp["highlights"]:
@@ -91,8 +97,11 @@ def build_resume_full_md(resume_info):
         out_file_full_md.write(
             f"### {edu_exp["education_cred"]}, {edu_exp["org_name"]}\n\n"
         )
-        end_date_str = "Present" if not edu_exp["end_date"] else edu_exp["end_date"]
-        out_file_full_md.write(f"_{edu_exp["start_date"]} — {end_date_str}  \n")
+        start_date_str = format_date(edu_exp["start_date"])
+        end_date_str = (
+            "Present" if not edu_exp["end_date"] else format_date(edu_exp["end_date"])
+        )
+        out_file_full_md.write(f"_{start_date_str} — {end_date_str}  \n")
         out_file_full_md.write(f"{edu_exp["org_location"]}  \n")
         out_file_full_md.write(
             f"Core technologies — {', '.join(edu_exp["skills"])}_\n\n"

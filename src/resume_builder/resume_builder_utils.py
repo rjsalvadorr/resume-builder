@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def print_splash(openfile, filetype="html"):
     splash_graphic = "\n"
     splash_graphic += "<!--------------------------------\n"
@@ -23,3 +26,10 @@ def format_phone_num(phone_num, type="txt"):
         output_num = f"+{country_code}{area_code}{phone_num}"
 
     return output_num
+
+
+def format_date(date_str, type="txt"):
+    dt = datetime.strptime(date_str, "%Y-%m-%d")
+    output_str = dt.strftime("%b %Y")
+
+    return output_str

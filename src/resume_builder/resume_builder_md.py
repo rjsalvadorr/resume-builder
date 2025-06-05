@@ -59,11 +59,11 @@ def build_resume_full_md(resume_info):
         end_date_str = (
             "Present" if not work_exp["end_date"] else format_date(work_exp["end_date"])
         )
-        out_file_full_md.write(f"_{start_date_str} — {end_date_str}  \n")
-        out_file_full_md.write(f"{work_exp["org_location"]}  \n")
-        out_file_full_md.write(
-            f"Core technologies — {', '.join(work_exp["skills"])}_\n\n"
-        )
+        out_file_full_md.write("| Date | Location | Core Skills |\n")
+        out_file_full_md.write("| --- | --- | --- |\n")
+        out_file_full_md.write(f"| {start_date_str} — {end_date_str} | {work_exp["org_location"]} | {', '.join(work_exp["skills"])} |\n")
+        out_file_full_md.write("\n")
+
         for highlight in work_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
         out_file_full_md.write("\n")
@@ -81,9 +81,11 @@ def build_resume_full_md(resume_info):
         end_date_str = (
             "Present" if not proj_exp["end_date"] else format_date(proj_exp["end_date"])
         )
-        out_file_full_md.write(f"_{start_date_str} — {end_date_str}  \n")
-        out_file_full_md.write(f"{proj_exp["org_location"]}  \n")
-        out_file_full_md.write(f"Core skills — {', '.join(proj_exp["skills"])}_\n\n")
+        out_file_full_md.write("| Date | Location | Core Skills |\n")
+        out_file_full_md.write("| --- | --- | --- |\n")
+        out_file_full_md.write(f"| {start_date_str} — {end_date_str} | {proj_exp["org_location"]} | {', '.join(proj_exp["skills"])} |\n")
+        out_file_full_md.write("\n")
+
         for highlight in proj_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
         out_file_full_md.write("\n")
@@ -101,11 +103,11 @@ def build_resume_full_md(resume_info):
         end_date_str = (
             "Present" if not edu_exp["end_date"] else format_date(edu_exp["end_date"])
         )
-        out_file_full_md.write(f"_{start_date_str} — {end_date_str}  \n")
-        out_file_full_md.write(f"{edu_exp["org_location"]}  \n")
-        out_file_full_md.write(
-            f"Core technologies — {', '.join(edu_exp["skills"])}_\n\n"
-        )
+        out_file_full_md.write("| Date | Location | Core Skills |\n")
+        out_file_full_md.write("| --- | --- | --- |\n")
+        out_file_full_md.write(f"| {start_date_str} — {end_date_str} | {edu_exp["org_location"]} | {', '.join(edu_exp["skills"])} |\n")
+        out_file_full_md.write("\n")
+
         for highlight in edu_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
         out_file_full_md.write("\n")

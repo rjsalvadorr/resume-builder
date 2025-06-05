@@ -5,20 +5,20 @@
             "info": "salvador.workshop@gmail.com"
         },
         {
-            "type": "website",
-            "info": "https://rjsalvadorr.com"
-        },
-        {
-            "type": "github",
-            "info": "https://github.com/rjsalvadorr"
-        },
-        {
             "type": "linkedin",
             "info": "https://linkedin.com/in/rjsalvadorr"
         },
         {
             "type": "phone",
             "info": "6474604027"
+        },
+        {
+            "type": "website",
+            "info": "https://rjsalvadorr.com"
+        },
+        {
+            "type": "github",
+            "info": "https://github.com/rjsalvadorr"
         }
     ]
 }

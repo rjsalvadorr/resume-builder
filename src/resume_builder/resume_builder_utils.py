@@ -68,19 +68,17 @@ def get_padline(str, line_len):
 
 def build_minimal_row_table(cells):
     """Builds a minimal (headless) one-row table."""
-    headers = []
-    footers = []
+    borders = []
     contentlines = []
 
     for cell_str in cells:
         dashline = get_dashline_for_str(cell_str)
-        headers.append(dashline)
-        footers.append(dashline)
+        borders.append(dashline)
         contentlines.append(get_padline(cell_str, len(dashline)))
 
-    out_strs = ["  ".join(headers)]
+    out_strs = ["  ".join(borders)]
     out_strs.append("  ".join(contentlines))
-    out_strs.append("  ".join(footers))
+    out_strs.append("  ".join(borders))
     out_str = "\n".join(out_strs) + "\n"
 
     return out_str
@@ -89,17 +87,19 @@ def build_minimal_row_table(cells):
 def build_minimal_table(cells):
     """Builds a minimal (headless) two-dimensional table. Data formata: cells[rowIdx][colIdx]"""
     borders = []
-    contentlines_raw = []
-    contentlines = []
+    contentlines = {}
+    contentlines_raw = {}
     line_lengths_by_col = {}
     highest_row_idx = 0
     highest_col_idx = 0
+    content_elements = 0
 
     # ---
     # Reading
     # ---
 
     for row_idx in range(len(cells)):
+        contentlines_raw[row_idx] = []
         if row_idx > highest_row_idx:
             highest_row_idx = row_idx
         for col_idx in range(len(cells[row_idx])):
@@ -107,21 +107,45 @@ def build_minimal_table(cells):
                 line_lengths_by_col[col_idx] = []
             if col_idx > highest_col_idx:
                 highest_col_idx = col_idx
+            content_elements += 1
+
             curr_line = cells[row_idx][col_idx]
+            contentlines_raw[row_idx].append(curr_line)
             line_lengths_by_col[col_idx].append(len(curr_line))
 
     print(line_lengths_by_col)
+    print(highest_row_idx)
     print(highest_col_idx)
+    print(contentlines_raw)
+
+    # ---
+    # Preparing
+    # ---
+
+    for row_idx in range(highest_col_idx + 1):
+        borders.append(
+            get_dashline(max(line_lengths_by_col[row_idx]))
+        )
+
+    for row_idx in range(len(cells)):
+        contentlines[row_idx] = []
+        contentline_pts = []
+        for col_idx in range(len(cells[row_idx])):
+            contentline_pts.append(
+                get_padline(
+                    contentlines_raw[row_idx][col_idx],
+                    max(line_lengths_by_col[row_idx]),
+                )
+            )
+        contentlines[row_idx].append("  ".join(contentline_pts))
 
     # ---
     # Writing
     # ---
 
-    for row_idx in range(highest_col_idx + 1):
-        borders.append(get_dashline(max(line_lengths_by_col[row_idx])))
-
     out_strs = ["  ".join(borders)]
-    out_strs.append("  ".join(contentlines))
+    for content_row in contentlines:
+        out_strs.append("\n".join(contentlines[content_row]))
     out_strs.append("  ".join(borders))
     out_str = "\n".join(out_strs) + "\n"
 

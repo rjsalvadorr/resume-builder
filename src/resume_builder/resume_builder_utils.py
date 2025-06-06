@@ -92,7 +92,7 @@ def build_minimal_table(cells):
     contentlines_raw = []
     contentlines = []
     line_lengths_by_col = {}
-    longest_lines_by_col = {}
+    highest_row_idx = 0
     highest_col_idx = 0
 
     # ---
@@ -100,6 +100,8 @@ def build_minimal_table(cells):
     # ---
 
     for row_idx in range(len(cells)):
+        if row_idx > highest_row_idx:
+            highest_row_idx = row_idx
         for col_idx in range(len(cells[row_idx])):
             if col_idx not in line_lengths_by_col:
                 line_lengths_by_col[col_idx] = []
@@ -109,7 +111,6 @@ def build_minimal_table(cells):
             line_lengths_by_col[col_idx].append(len(curr_line))
 
     print(line_lengths_by_col)
-    print(longest_lines_by_col)
     print(highest_col_idx)
 
     # ---

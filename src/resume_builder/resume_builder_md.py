@@ -1,4 +1,10 @@
-from .resume_builder_utils import print_splash, format_phone_num, format_date
+from .resume_builder_utils import (
+    print_splash,
+    format_phone_num,
+    format_date,
+    build_minimal_table,
+    build_minimal_row_table,
+)
 
 
 def build_resume_full_md(resume_info):
@@ -17,6 +23,7 @@ def build_resume_full_md(resume_info):
 
     contact_idx = 0
     num_break = 3
+    build_minimal_table([['CGHDFG', 'asdfasdf', 'gsdgfhdgfsdfh'], ['d456456546456456fgfd', 'aWEaseeRASDFASD']])
     for contact in resume_info["contact_info"]:
         if contact_idx == num_break:
             out_file_full_md.write("  \n")
@@ -66,12 +73,14 @@ def build_resume_full_md(resume_info):
         end_date_str = (
             "Present" if not work_exp["end_date"] else format_date(work_exp["end_date"])
         )
-        out_file_full_md.write(
-            f"_{start_date_str} — {end_date_str} &nbsp;in&nbsp; {work_exp["org_location"]}  \n"
-        )
-        out_file_full_md.write(
-            f"Core technologies — {', '.join(work_exp["skills"])}_\n\n"
-        )
+
+        cells = [
+            f"{start_date_str} — {end_date_str}",
+            work_exp["org_location"],
+            f"Core technologies — {', '.join(work_exp["skills"])}",
+        ]
+        out_file_full_md.write(f"{build_minimal_row_table(cells)}\n")
+
         for highlight in work_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
         out_file_full_md.write("\n")
@@ -89,10 +98,14 @@ def build_resume_full_md(resume_info):
         end_date_str = (
             "Present" if not proj_exp["end_date"] else format_date(proj_exp["end_date"])
         )
-        out_file_full_md.write(
-            f"_{start_date_str} — {end_date_str} &nbsp;in&nbsp; {proj_exp["org_location"]}  \n"
-        )
-        out_file_full_md.write(f"Core skills — {', '.join(proj_exp["skills"])}_\n\n")
+
+        cells = [
+            f"{start_date_str} — {end_date_str}",
+            proj_exp["org_location"],
+            f"Core skills — {', '.join(proj_exp["skills"])}",
+        ]
+        out_file_full_md.write(f"{build_minimal_row_table(cells)}\n")
+
         for highlight in proj_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
         out_file_full_md.write("\n")
@@ -110,10 +123,14 @@ def build_resume_full_md(resume_info):
         end_date_str = (
             "Present" if not edu_exp["end_date"] else format_date(edu_exp["end_date"])
         )
-        out_file_full_md.write(
-            f"_{start_date_str} — {end_date_str} &nbsp;in&nbsp; {edu_exp["org_location"]}  \n"
-        )
-        out_file_full_md.write(f"Core skills — {', '.join(edu_exp["skills"])}_\n\n")
+
+        cells = [
+            f"{start_date_str} — {end_date_str}",
+            edu_exp["org_location"],
+            f"Core skills — {', '.join(edu_exp["skills"])}",
+        ]
+        out_file_full_md.write(f"{build_minimal_row_table(cells)}\n")
+
         for highlight in edu_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
         out_file_full_md.write("\n")

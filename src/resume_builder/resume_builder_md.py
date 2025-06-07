@@ -2,8 +2,8 @@ from .resume_builder_utils import (
     # print_splash,
     format_phone_num,
     format_date,
-    build_minimal_table,
-    build_minimal_row_table,
+    build_minimal_md_table,
+    build_minimal_row_md_table,
 )
 
 
@@ -41,7 +41,7 @@ def build_resume_full_md(resume_info):
             copy = format_phone_num(contact["info"])
         contact_cells[contact_cells_row_idx].append(f"[{copy}]({link})")
 
-    contacts_table = build_minimal_table(contact_cells)
+    contacts_table = build_minimal_md_table(contact_cells)
     out_file_full_md.write(contacts_table)
     out_file_full_md.write("\n")
 
@@ -80,7 +80,7 @@ def build_resume_full_md(resume_info):
             work_exp["org_location"],
             f"Core technologies — {', '.join(work_exp["skills"])}",
         ]
-        out_file_full_md.write(f"{build_minimal_row_table(cells)}\n")
+        out_file_full_md.write(f"{build_minimal_row_md_table(cells)}\n")
 
         for highlight in work_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
@@ -105,7 +105,7 @@ def build_resume_full_md(resume_info):
             proj_exp["org_location"],
             f"Core skills — {', '.join(proj_exp["skills"])}",
         ]
-        out_file_full_md.write(f"{build_minimal_row_table(cells)}\n")
+        out_file_full_md.write(f"{build_minimal_row_md_table(cells)}\n")
 
         for highlight in proj_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")
@@ -130,7 +130,7 @@ def build_resume_full_md(resume_info):
             edu_exp["org_location"],
             f"Core skills — {', '.join(edu_exp["skills"])}",
         ]
-        out_file_full_md.write(f"{build_minimal_row_table(cells)}\n")
+        out_file_full_md.write(f"{build_minimal_row_md_table(cells)}\n")
 
         for highlight in edu_exp["highlights"]:
             out_file_full_md.write(f"- {highlight}\n")

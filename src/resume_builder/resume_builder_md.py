@@ -1,5 +1,5 @@
 from .resume_builder_utils import (
-    print_splash,
+    # print_splash,
     format_phone_num,
     format_date,
     build_minimal_table,
@@ -13,7 +13,7 @@ def build_resume_full_md(resume_info):
     # -----
     # Intro
 
-    print_splash(out_file_full_md, "md")
+    # print_splash(out_file_full_md, "md")
 
     out_file_full_md.write(f"# {resume_info["name"]}\n\n")
     out_file_full_md.write(f"### {resume_info["subtitle"]}\n\n")
@@ -21,14 +21,14 @@ def build_resume_full_md(resume_info):
     # ------------
     # Contact Info
 
-    contact_idx = 0
     num_break = 3
-    build_minimal_table([['CGHDFG', 'asdfasdf', 'gsdgfhdgfsdfh'], ['d456456546456456fgfd', 'aWEaseeRASDFASD']])
-    for contact in resume_info["contact_info"]:
-        if contact_idx == num_break:
-            out_file_full_md.write("  \n")
-        elif contact_idx != 0:
-            out_file_full_md.write(" &nbsp; &nbsp; ")
+    contact_cells = []
+    contact_cells_row_idx = -1
+    for contact_idx in range(len(resume_info["contact_info"])):
+        contact = resume_info["contact_info"][contact_idx]
+        if contact_idx % num_break == 0:
+            contact_cells.append([])
+            contact_cells_row_idx += 1
         link = contact["info"]
         copy = contact["info"].replace("https://", "")
 
@@ -39,10 +39,11 @@ def build_resume_full_md(resume_info):
         if is_phone:
             link = f"tel:{format_phone_num(contact["info"], "html")}"
             copy = format_phone_num(contact["info"])
+        contact_cells[contact_cells_row_idx].append(f"[{copy}]({link})")
 
-        out_file_full_md.write(f"[{copy}]({link})")
-        contact_idx = contact_idx + 1
-    out_file_full_md.write("\n\n")
+    contacts_table = build_minimal_table(contact_cells)
+    out_file_full_md.write(contacts_table)
+    out_file_full_md.write("\n")
 
     # ------------
     # Objective

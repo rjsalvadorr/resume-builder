@@ -12,7 +12,6 @@ def print_splash(openfile, filetype="html"):
     splash_graphic += "--------------------------------->\n"
     splash_graphic += "\n"
 
-    # print(splash_graphic)
     openfile.write(splash_graphic)
 
 
@@ -113,30 +112,25 @@ def build_minimal_table(cells):
             contentlines_raw[row_idx].append(curr_line)
             line_lengths_by_col[col_idx].append(len(curr_line))
 
-    print(line_lengths_by_col)
-    print(highest_row_idx)
-    print(highest_col_idx)
-    print(contentlines_raw)
-
     # ---
     # Preparing
     # ---
 
     for row_idx in range(highest_col_idx + 1):
         borders.append(
-            get_dashline(max(line_lengths_by_col[row_idx]))
+            get_dashline(max(line_lengths_by_col[row_idx]) + typ_tbl_char_padding)
         )
 
     for row_idx in range(len(cells)):
         contentlines[row_idx] = []
         contentline_pts = []
         for col_idx in range(len(cells[row_idx])):
-            contentline_pts.append(
-                get_padline(
-                    contentlines_raw[row_idx][col_idx],
-                    max(line_lengths_by_col[row_idx]),
-                )
+            max_line_len = max(line_lengths_by_col[col_idx])
+            contentline_part = get_padline(
+                contentlines_raw[row_idx][col_idx],
+                max_line_len + typ_tbl_char_padding,
             )
+            contentline_pts.append(contentline_part)
         contentlines[row_idx].append("  ".join(contentline_pts))
 
     # ---
@@ -149,6 +143,4 @@ def build_minimal_table(cells):
     out_strs.append("  ".join(borders))
     out_str = "\n".join(out_strs) + "\n"
 
-    print(out_str)
-
-    return 0
+    return out_str

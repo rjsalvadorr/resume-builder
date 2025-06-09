@@ -26,8 +26,8 @@ def build_resume_exp_md(exp, openfile):
     skill_header = "Core technologies" if exp["exp_type"] == "work" else "Core skills"
     cells = [
         [
-            f"{start_date_str} — {end_date_str}\n{exp["org_location"]}",
-            f"{skill_header} — {', '.join(exp["skills"])}",
+            f"_**{start_date_str} — {end_date_str}**\n{exp["org_location"]}_",
+            f"_**{skill_header}** — {', '.join(exp["skills"])}_",
         ]
     ]
     # openfile.write(f"{build_minimal_row_md_table(cells)}\n")
@@ -88,8 +88,11 @@ def build_resume_full_md(resume_info):
 
     out_file_full_md.write(f"## Skills & Qualifications\n\n")
 
+    skill_cells = []
     for skill in resume_info["skills_qualifications"]:
-        out_file_full_md.write(f"- {skill}\n")
+        skill_cells.append(skill)
+    skills_table = build_minimal_row_md_table(skill_cells)
+    out_file_full_md.write(skills_table)
     out_file_full_md.write("\n")
 
     # ------------

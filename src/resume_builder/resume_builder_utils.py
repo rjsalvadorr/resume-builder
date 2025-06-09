@@ -1,4 +1,5 @@
 from datetime import datetime
+from pprint import pprint
 
 typ_tbl_char_padding = 2
 
@@ -91,7 +92,6 @@ def build_minimal_md_table(cells):
     line_lengths_by_col = {}
     highest_row_idx = 0
     highest_col_idx = 0
-    content_elements = 0
 
     # ---
     # Reading
@@ -106,7 +106,6 @@ def build_minimal_md_table(cells):
                 line_lengths_by_col[col_idx] = []
             if col_idx > highest_col_idx:
                 highest_col_idx = col_idx
-            content_elements += 1
 
             curr_line = cells[row_idx][col_idx]
             contentlines_raw[row_idx].append(curr_line)
@@ -149,12 +148,12 @@ def build_minimal_md_table(cells):
 def build_multiline_md_table(cells):
     """Builds a minimal (headless) two-dimensional table with multiline cells. Data formata: cells[rowIdx][colIdx]"""
     borders = []
-    contentlines = {}
+    contentlines = []
     contentlines_raw = {}
     line_lengths_by_col = {}
+    line_nums_by_row = {}
     highest_row_idx = 0
     highest_col_idx = 0
-    content_elements = 0
 
     # ---
     # Reading
@@ -164,19 +163,32 @@ def build_multiline_md_table(cells):
         contentlines_raw[row_idx] = []
         if row_idx > highest_row_idx:
             highest_row_idx = row_idx
+        if row_idx not in line_nums_by_row:
+            line_nums_by_row[row_idx] = []
+
         for col_idx in range(len(cells[row_idx])):
             if col_idx not in line_lengths_by_col:
                 line_lengths_by_col[col_idx] = []
             if col_idx > highest_col_idx:
                 highest_col_idx = col_idx
-            content_elements += 1
 
+            contentlines_raw[row_idx].append([])
             curr_line = cells[row_idx][col_idx]
-            contentlines_raw[row_idx].append(curr_line)
 
             # check the lengths of each line in the cell
-            for cell_line in curr_line.splitlines():
+            raw_lines = curr_line.splitlines()
+
+            highest_line_idx = 0
+            for line_idx in range(len(raw_lines)):
+                highest_line_idx += 1
+                cell_line = raw_lines[line_idx]
                 line_lengths_by_col[col_idx].append(len(cell_line))
+                contentlines_raw[row_idx][col_idx].append(cell_line)
+            line_nums_by_row[row_idx].append(highest_line_idx)
+
+        line_nums_by_row[row_idx] = max(line_nums_by_row[row_idx])
+
+    pprint(contentlines_raw)
 
     # ---
     # Preparing
@@ -187,26 +199,39 @@ def build_multiline_md_table(cells):
             get_dashline(max(line_lengths_by_col[row_idx]) + typ_tbl_char_padding)
         )
 
-    for row_idx in range(len(cells)):
-        contentlines[row_idx] = []
-        contentline_pts = []
-        for col_idx in range(len(cells[row_idx])):
-            max_line_len = max(line_lengths_by_col[col_idx])
-            contentline_part = get_padline(
-                contentlines_raw[row_idx][col_idx],
-                max_line_len + typ_tbl_char_padding,
-            )
-            contentline_pts.append(contentline_part)
-        contentlines[row_idx].append("  ".join(contentline_pts))
+    total_lines = 0
+    for max_line_num in line_nums_by_row.values():
+        total_lines += max_line_num
+
+    for row_idx in range(len(contentlines_raw)):
+        max_lines = line_nums_by_row[row_idx]
+
+        if row_idx != 0:
+            contentlines.append("\n")
+        for l_idx in range(max_lines):
+            line_parts = []
+
+            for col_idx in range(len(contentlines_raw[row_idx])):
+                max_line_len = max(line_lengths_by_col[col_idx])
+
+                c_line = contentlines_raw[row_idx][col_idx][l_idx]
+                c_line_part = get_padline(
+                    c_line,
+                    max_line_len + typ_tbl_char_padding,
+                )
+                line_parts.append(c_line_part)
+
+            contentlines.append("  ".join(line_parts))
 
     # ---
     # Writing
     # ---
 
+    pprint(contentlines)
     out_strs = ["  ".join(borders)]
-    for content_row in contentlines:
-        out_strs.append("\n\n".join(contentlines[content_row]))
+    out_strs.append("\n".join(contentlines))
     out_strs.append("  ".join(borders))
     out_str = "\n".join(out_strs) + "\n"
 
-    return out_str
+    print(out_str)
+    # return 0

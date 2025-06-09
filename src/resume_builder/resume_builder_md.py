@@ -4,6 +4,7 @@ from .resume_builder_utils import (
     format_date,
     build_minimal_md_table,
     build_minimal_row_md_table,
+    build_multiline_md_table,
 )
 
 
@@ -42,6 +43,18 @@ def build_resume_full_md(resume_info):
         contact_cells[contact_cells_row_idx].append(f"[{copy}]({link})")
 
     contacts_table = build_minimal_md_table(contact_cells)
+
+    c_table_data = [
+        ["00dfasefasdf\n00s5adfasdqw", "01asd42fasefasdf\n01sadf876asdqw"],
+        ["10as65efasdf\n10s3adfadqw", "11dfas6e34fasdf\n11sadfadq35w"],
+        [
+            "20s8dfa8sefadsfasdf\n20sadfasdqd4dfdfw",
+            "21asdfasef443adsfasdf\n21sadfasdq/+9/ddfdfw",
+        ],
+        ["30sdfase7fjkjkasdf\n30dfsdqw", "31asdfasefjk9/jkasdf\n31d234fsdqw"],
+    ]
+    c_table = build_multiline_md_table(c_table_data)
+
     out_file_full_md.write(contacts_table)
     out_file_full_md.write("\n")
 

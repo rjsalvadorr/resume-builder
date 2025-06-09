@@ -5,6 +5,7 @@ from .resume_builder_utils import (
     build_minimal_md_table,
     build_minimal_row_md_table,
     build_multiline_md_table,
+    sort_exp,
 )
 
 
@@ -100,7 +101,7 @@ def build_resume_full_md(resume_info):
 
     out_file_full_md.write(f"## Technical Experience\n\n")
 
-    for work_exp in resume_info["work_experience"]:
+    for work_exp in sorted(resume_info["work_experience"], key=sort_exp, reverse=True):
         build_resume_exp_md(work_exp, out_file_full_md)
 
     # ------------
@@ -108,7 +109,7 @@ def build_resume_full_md(resume_info):
 
     out_file_full_md.write(f"## Projects\n\n")
 
-    for proj_exp in resume_info["projects"]:
+    for proj_exp in sorted(resume_info["projects"], key=sort_exp, reverse=True):
         build_resume_exp_md(proj_exp, out_file_full_md)
 
     # ------------
@@ -116,7 +117,7 @@ def build_resume_full_md(resume_info):
 
     out_file_full_md.write(f"## Technical Education\n\n")
 
-    for edu_exp in resume_info["education"]:
+    for edu_exp in sorted(resume_info["education"], key=sort_exp, reverse=True):
         build_resume_exp_md(edu_exp, out_file_full_md)
 
     # ------------

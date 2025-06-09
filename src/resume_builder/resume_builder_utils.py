@@ -5,6 +5,11 @@ html_newline = "<br>"
 typ_tbl_char_padding = 2 + len(html_newline)
 
 
+def sort_exp(exp):
+    dt = datetime.strptime(exp["start_date"], "%Y-%m-%d")
+    return dt.timestamp()
+
+
 def print_splash(openfile, filetype="html"):
     splash_graphic = "\n"
     splash_graphic += "<!--------------------------------\n"

@@ -1,6 +1,6 @@
 [project]
 name = "resume_builder"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="R. J. Salvador", email="salvador.workshop@gmail.com" },
 ]

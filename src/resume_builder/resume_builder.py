@@ -1,5 +1,6 @@
 import json
-from .resume_builder_utils import print_splash
+
+# from .resume_builder_utils import print_splash
 from . import resume_builder_md, resume_builder_txt, resume_builder_html
 
 
@@ -30,7 +31,7 @@ def build_cover_letter(complete_resume_info):
     # -----
     # Intro
 
-    print_splash(out_file_cover)
+    # print_splash(out_file_cover)
 
     # ------------
     # Cover Letter

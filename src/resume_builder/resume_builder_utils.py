@@ -1,7 +1,8 @@
 from datetime import datetime
 from pprint import pprint
 
-typ_tbl_char_padding = 2
+html_newline = "<br>"
+typ_tbl_char_padding = 2 + len(html_newline)
 
 
 def print_splash(openfile, filetype="html"):
@@ -188,8 +189,6 @@ def build_multiline_md_table(cells):
 
         line_nums_by_row[row_idx] = max(line_nums_by_row[row_idx])
 
-    pprint(contentlines_raw)
-
     # ---
     # Preparing
     # ---
@@ -206,15 +205,24 @@ def build_multiline_md_table(cells):
     for row_idx in range(len(contentlines_raw)):
         max_lines = line_nums_by_row[row_idx]
 
-        if row_idx != 0:
-            contentlines.append("\n")
         for l_idx in range(max_lines):
             line_parts = []
 
             for col_idx in range(len(contentlines_raw[row_idx])):
                 max_line_len = max(line_lengths_by_col[col_idx])
 
-                c_line = contentlines_raw[row_idx][col_idx][l_idx]
+                try:
+                    c_line = contentlines_raw[row_idx][col_idx][l_idx]
+                    if (
+                        len(contentlines_raw[row_idx][col_idx]) > 1
+                        and l_idx != len(contentlines_raw[row_idx]) - 1
+                    ):
+                        c_line += html_newline
+                    else:
+                        c_line += get_padline("", len(html_newline))
+                except IndexError:
+                    c_line = ""
+
                 c_line_part = get_padline(
                     c_line,
                     max_line_len + typ_tbl_char_padding,
@@ -227,11 +235,15 @@ def build_multiline_md_table(cells):
     # Writing
     # ---
 
-    pprint(contentlines)
     out_strs = ["  ".join(borders)]
     out_strs.append("\n".join(contentlines))
-    out_strs.append("  ".join(borders))
+    borderpad = ""
+    if highest_row_idx == 0:
+        # "It is possible for a multiline table to have just one row, but the row should
+        # be followed by a blank line (and then the row of dashes that ends the table),
+        # or the table may be interpreted as a simple table."
+        borderpad = "\n"
+    out_strs.append(borderpad + "  ".join(borders))
     out_str = "\n".join(out_strs) + "\n"
 
-    print(out_str)
-    # return 0
+    return out_str

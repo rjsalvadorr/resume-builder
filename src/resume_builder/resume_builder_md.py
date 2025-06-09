@@ -8,6 +8,36 @@ from .resume_builder_utils import (
 )
 
 
+def build_resume_exp_md(exp, openfile):
+    exp_title = ""
+
+    if exp["exp_type"] == "work":
+        exp_title = exp["exp_role"]
+    elif exp["exp_type"] == "education":
+        exp_title = exp["education_cred"]
+    elif exp["exp_type"] == "project":
+        exp_title = exp["project_name"]
+
+    openfile.write(f"### {exp_title}, {exp["org_name"]}\n\n")
+
+    start_date_str = format_date(exp["start_date"])
+    end_date_str = "Present" if not exp["end_date"] else format_date(exp["end_date"])
+
+    skill_header = "Core technologies" if exp["exp_type"] == "work" else "Core skills"
+    cells = [
+        [
+            f"{start_date_str} — {end_date_str}\n{exp["org_location"]}",
+            f"{skill_header} — {', '.join(exp["skills"])}",
+        ]
+    ]
+    # openfile.write(f"{build_minimal_row_md_table(cells)}\n")
+    openfile.write(f"{build_multiline_md_table(cells)}\n")
+
+    for highlight in exp["highlights"]:
+        openfile.write(f"- {highlight}\n")
+    openfile.write("\n")
+
+
 def build_resume_full_md(resume_info):
     out_file_full_md = open("build/resume-full.md", "w", encoding="utf-8")
 
@@ -44,17 +74,6 @@ def build_resume_full_md(resume_info):
 
     contacts_table = build_minimal_md_table(contact_cells)
 
-    c_table_data = [
-        ["00dfasefasdf\n00s5adfasdqw", "01asd42fasefasdf\n01sadf876asdqw"],
-        ["10as65efasdf\n10s3adfadqw", "11dfas6e34fasdf\n11sadfadq35w"],
-        [
-            "20s8dfa8sefadsfasdf\n20sadfasdqd4dfdfw",
-            "21asdfasef443adsfasdf\n21sadfasdq/+9/ddfdfw",
-        ],
-        ["30sdfase7fjkjkasdf\n30dfsdqw", "31asdfasefjk9/jkasdf\n31d234fsdqw"],
-    ]
-    c_table = build_multiline_md_table(c_table_data)
-
     out_file_full_md.write(contacts_table)
     out_file_full_md.write("\n")
 
@@ -79,25 +98,7 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Technical Experience\n\n")
 
     for work_exp in resume_info["work_experience"]:
-        out_file_full_md.write(
-            f"### {work_exp["exp_role"]}, {work_exp["org_name"]}\n\n"
-        )
-
-        start_date_str = format_date(work_exp["start_date"])
-        end_date_str = (
-            "Present" if not work_exp["end_date"] else format_date(work_exp["end_date"])
-        )
-
-        cells = [
-            f"{start_date_str} — {end_date_str}",
-            work_exp["org_location"],
-            f"Core technologies — {', '.join(work_exp["skills"])}",
-        ]
-        out_file_full_md.write(f"{build_minimal_row_md_table(cells)}\n")
-
-        for highlight in work_exp["highlights"]:
-            out_file_full_md.write(f"- {highlight}\n")
-        out_file_full_md.write("\n")
+        build_resume_exp_md(work_exp, out_file_full_md)
 
     # ------------
     # Projects
@@ -105,24 +106,7 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Projects\n\n")
 
     for proj_exp in resume_info["projects"]:
-        out_file_full_md.write(
-            f"### {proj_exp["project_name"]}, {proj_exp["org_name"]}\n\n"
-        )
-        start_date_str = format_date(proj_exp["start_date"])
-        end_date_str = (
-            "Present" if not proj_exp["end_date"] else format_date(proj_exp["end_date"])
-        )
-
-        cells = [
-            f"{start_date_str} — {end_date_str}",
-            proj_exp["org_location"],
-            f"Core skills — {', '.join(proj_exp["skills"])}",
-        ]
-        out_file_full_md.write(f"{build_minimal_row_md_table(cells)}\n")
-
-        for highlight in proj_exp["highlights"]:
-            out_file_full_md.write(f"- {highlight}\n")
-        out_file_full_md.write("\n")
+        build_resume_exp_md(proj_exp, out_file_full_md)
 
     # ------------
     # Technical Education
@@ -130,24 +114,7 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Technical Education\n\n")
 
     for edu_exp in resume_info["education"]:
-        out_file_full_md.write(
-            f"### {edu_exp["education_cred"]}, {edu_exp["org_name"]}\n\n"
-        )
-        start_date_str = format_date(edu_exp["start_date"])
-        end_date_str = (
-            "Present" if not edu_exp["end_date"] else format_date(edu_exp["end_date"])
-        )
-
-        cells = [
-            f"{start_date_str} — {end_date_str}",
-            edu_exp["org_location"],
-            f"Core skills — {', '.join(edu_exp["skills"])}",
-        ]
-        out_file_full_md.write(f"{build_minimal_row_md_table(cells)}\n")
-
-        for highlight in edu_exp["highlights"]:
-            out_file_full_md.write(f"- {highlight}\n")
-        out_file_full_md.write("\n")
+        build_resume_exp_md(edu_exp, out_file_full_md)
 
     # ------------
     # About Me

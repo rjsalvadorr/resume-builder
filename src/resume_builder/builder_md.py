@@ -3,7 +3,12 @@ from .utils import (
     sort_exp,
 )
 
-from .utils_md import build_minimal_md_table, build_multiline_md_table, build_resume_exp_md
+from .utils_md import (
+    build_minimal_md_table,
+    build_resume_exp_md,
+    build_minimal_row_md_table,
+    format_skill_qual_md,
+)
 
 
 def build_resume_full_md(resume_info):
@@ -11,8 +16,6 @@ def build_resume_full_md(resume_info):
 
     # -----
     # Intro
-
-    # print_splash(out_file_full_md, "md")
 
     out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
     out_file_full_md.write(f"### {resume_info["subtitle"]} {{#subtitle}}\n\n")
@@ -58,8 +61,8 @@ def build_resume_full_md(resume_info):
 
     skill_cells = []
     for skill in resume_info["skills_qualifications"]:
-        skill_cells.append(skill)
-    skills_table = build_multiline_md_table([skill_cells])
+        skill_cells.append(format_skill_qual_md(skill))
+    skills_table = build_minimal_row_md_table(skill_cells)
     out_file_full_md.write(skills_table)
     out_file_full_md.write("\n")
 

@@ -8,6 +8,7 @@ from resume_builder.utils import (
 from .utils import (
     format_date,
 )
+import re
 
 
 def build_multiline_md_table(cells):
@@ -117,11 +118,11 @@ def build_resume_exp_md(exp, openfile):
     exp_title = ""
 
     if exp["exp_type"] == "work":
-        exp_title = exp["exp_role"]
+        exp_title = format_exp_title_md(exp["exp_role"])
     elif exp["exp_type"] == "education":
-        exp_title = exp["education_cred"]
+        exp_title = format_exp_title_md(exp["education_cred"])
     elif exp["exp_type"] == "project":
-        exp_title = exp["project_name"]
+        exp_title = format_exp_title_md(exp["project_name"])
 
     openfile.write(f"### {exp_title} — _{exp["org_name"]}_ {{.exp-heading}}\n\n")
 
@@ -219,3 +220,17 @@ def build_minimal_md_table(cells):
     out_str = "\n".join(out_strs) + "\n"
 
     return out_str
+
+
+def exp_title_md_repl(matchobj):
+    return f"_{matchobj.group(0)}_"
+
+
+def format_exp_title_md(str):
+    out_str = re.sub(r"\((.*?)\)", exp_title_md_repl, str)
+    return out_str
+
+
+def format_skill_qual_md(str):
+    lines = str.split("<br>")
+    return f"_**{lines[0]}**_<br>{lines[1]}"

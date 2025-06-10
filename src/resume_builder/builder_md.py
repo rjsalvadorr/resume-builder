@@ -33,15 +33,27 @@ def build_resume_full_md(resume_info):
             contact_cells_row_idx += 1
         link = contact["info"]
         copy = contact["info"].replace("https://", "")
+        contact_icon_src = "src/resume_builder/icons/generic.svg"
 
-        is_email = contact["type"] == "email"
-        is_phone = contact["type"] == "phone"
-        if is_email:
+        if contact["type"] == "website":
+            contact_icon_src = "src/resume_builder/icons/user-circle.svg"
+        elif contact["type"] == "email":
             link = f"mailto:{contact["info"] }"
-        if is_phone:
+            contact_icon_src = "src/resume_builder/icons/email.svg"
+        elif contact["type"] == "phone":
             link = f"tel:{format_phone_num(contact["info"], "html")}"
             copy = format_phone_num(contact["info"])
-        contact_cells[contact_cells_row_idx].append(f"[{copy}]({link})")
+            contact_icon_src = "src/resume_builder/icons/phone.svg"
+        elif contact["type"] == "github":
+            copy = contact["info"].replace("https://github.com/", "")
+            contact_icon_src = "src/resume_builder/icons/github.svg"
+        elif contact["type"] == "linkedin":
+            copy = contact["info"].replace("https://linkedin.com/in/", "")
+            contact_icon_src = "src/resume_builder/icons/linkedin.svg"
+
+        contact_alt = f"Icon ({contact["type"]})"
+        contact_icon = f'![{contact_alt}]({contact_icon_src} "{contact_alt}")'
+        contact_cells[contact_cells_row_idx].append(f"{contact_icon}&nbsp; [{copy}]({link})")
 
     contacts_table = build_minimal_md_table(contact_cells)
 

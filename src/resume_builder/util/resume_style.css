@@ -89,6 +89,7 @@ samp {
     font-size: 40.05pt;
     line-height: 1.5;
     letter-spacing: 0.01em;
+    text-align: center;
 }
 
 #subtitle {
@@ -97,12 +98,13 @@ samp {
     letter-spacing: 0.01em;
     line-height: 1.5;
     border-bottom: 1.25pt solid grey;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.125em;
     opacity: 0.875;
+    text-align: center;
 }
 
 #objective {
-    margin-top: 0.25em;
+    margin-top: 0.2em;
 }
 
 h2,
@@ -142,12 +144,28 @@ table tr td {
 .exp-heading+table tr td,
 #subtitle+table tr td {
     line-height: 1.5;
-    font-size: 0.96875em;
+    vertical-align: baseline;
 }
 
 /* .exp-heading+table tr td:first-of-type {
     background-color: #fcc;
-} */
+    } */
+
+#subtitle+table {
+    width: 100%;
+}
+
+#subtitle+table tr td a {
+    color: #444;
+    letter-spacing: 0.033em;
+    text-decoration: none;
+}
+
+#subtitle+table tr td img {
+    display: inline-block;
+    height: 1.33em;
+    margin-bottom: -0.25em;
+}
 
 /* #subtitle+table tr td:first-of-type {
     background-color: #cfc;

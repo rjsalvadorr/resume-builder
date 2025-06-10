@@ -1,0 +1,12 @@
+@page {
+    size: letter;
+    margin: 1.5875cm;
+}
+
+table {
+    break-inside: avoid;
+}
+
+#title {
+    margin-top: -0.5em;
+}

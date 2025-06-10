@@ -19,7 +19,7 @@ def build_resume_exp_md(exp, openfile):
     elif exp["exp_type"] == "project":
         exp_title = exp["project_name"]
 
-    openfile.write(f"### {exp_title}, {exp["org_name"]} {{.exp-heading}}\n\n")
+    openfile.write(f"### {exp_title} — _{exp["org_name"]}_ {{.exp-heading}}\n\n")
 
     start_date_str = format_date(exp["start_date"])
     end_date_str = "Present" if not exp["end_date"] else format_date(exp["end_date"])
@@ -31,7 +31,6 @@ def build_resume_exp_md(exp, openfile):
             f"_**{skill_header}** — {', '.join(exp["skills"])}_",
         ]
     ]
-    # openfile.write(f"{build_minimal_row_md_table(cells)}\n")
     openfile.write(f"{build_multiline_md_table(cells)}\n")
 
     for highlight in exp["highlights"]:
@@ -92,7 +91,7 @@ def build_resume_full_md(resume_info):
     skill_cells = []
     for skill in resume_info["skills_qualifications"]:
         skill_cells.append(skill)
-    skills_table = build_minimal_row_md_table(skill_cells)
+    skills_table = build_multiline_md_table([skill_cells])
     out_file_full_md.write(skills_table)
     out_file_full_md.write("\n")
 
@@ -115,7 +114,7 @@ def build_resume_full_md(resume_info):
     # ------------
     # Technical Education
 
-    out_file_full_md.write(f"## Technical Education\n\n")
+    out_file_full_md.write(f"## Education\n\n")
 
     for edu_exp in sorted(resume_info["education"], key=sort_exp, reverse=True):
         build_resume_exp_md(edu_exp, out_file_full_md)

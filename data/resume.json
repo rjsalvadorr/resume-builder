@@ -1,11 +1,11 @@
 {
-    "name": "RJ Salvador",
+    "name": "R. J. Salvador",
     "subtitle": "Software Engineer",
     "objective": "I'm seeking software engineering roles that leverage my tech experience while making use of my skills in architecture tech and creative fields. I've been working in tech since 2014 with a strong focus on the front-end, UI and UX, data visualization, and 2D/3D modelling.",
     "skills_qualifications": [
-        "**Experienced with several software platforms and frameworks**, having worked in front-end roles (React, Ember), full-stack roles (J2EE, .NET, Python), and some cloud work (Azure). Accustomed to navigating complex codebases and learning unfamiliar tools quickly.",
-        "**Proficient at implementing UI designs to spec and solving UX problems.** Has a strong understanding of design processes (Figma, Illustrator, Storybook), and design systems.",
-        "**Has direct experience from all over the software development lifecycle**, from kickoff, to delivery, to maintenance. Has leveraged that experience to assess feasibility and help plan project roadmaps."
+        "_**Experienced with several software platforms and frameworks.**_  \nHaving worked in front-end roles (React, Ember), full-stack roles (J2EE, .NET, Python), and some cloud work (Azure). Accustomed to navigating complex codebases and learning unfamiliar tools quickly.",
+        "_**Proficient at implementing UI designs to spec and solving UX problems.**_  \nHas a strong understanding of design processes (Figma, Illustrator, Storybook), and design systems.",
+        "_**Has direct experience from all over the software development lifecycle.**_  \nFrom kickoff, to delivery, to maintenance. Has leveraged that experience to assess feasibility and help plan project roadmaps."
     ],
     "about": "When I'm away from work, I'm usually playing music (guitar/choir/cello), hanging out at a climbing gym, or being active in church."
 }

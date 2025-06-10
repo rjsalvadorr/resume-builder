@@ -7,10 +7,12 @@ def build_resume_full_pdf():
     markdown_data = open("build/resume-full.md", "r", encoding="utf-8")
     doc = pandoc.read(markdown_data.read())
 
-    weasyprint_opts = "-e utf8 --hinting"
+    weasyprint_opts = "-e utf8 -p --hinting"
     write_opts = [
         "--css",
-        "src/resume_builder/util/r_style.css",
+        "src/resume_builder/util/resume_style.css",
+        "--css",
+        "src/resume_builder/util/resume_print.css",
         "--to",
         "html",
         "--pdf-engine-opt",

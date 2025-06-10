@@ -1,7 +1,12 @@
 import json
 
 # from .resume_builder_utils import print_splash
-from . import resume_builder_md, resume_builder_txt, resume_builder_html
+from . import (
+    resume_builder_md,
+    resume_builder_txt,
+    resume_builder_html,
+    resume_builder_pdf,
+)
 
 
 def build_resume_full(complete_resume_info):
@@ -9,6 +14,7 @@ def build_resume_full(complete_resume_info):
     # the HTML builder uses the markdown file as its data source
     resume_builder_md.build_resume_full_md(complete_resume_info["resume"])
     resume_builder_html.build_resume_full_html()
+    resume_builder_pdf.build_resume_full_pdf()
 
     return 0
 

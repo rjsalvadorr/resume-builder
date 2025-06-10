@@ -16,6 +16,10 @@ Pandoc version 3.7.0.2 is not supported, we proceed as if pandoc 3.2.1 was used.
 The behavior of the library is undefined if the document models of these versions differ.  
 warnings.warn(error)
 
+### PDF generation
+
+There are [a lot of options available for use](https://pandoc.org/MANUAL.html#creating-a-pdf). But these PDF engines (_e.g. pdflatex, weasyprint, context_) need to be installed before pandoc can use them.
+
 ## USAGE
 
 1. Be in the root directory of this repo

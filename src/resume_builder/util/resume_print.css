@@ -6,3 +6,7 @@
 table {
     break-inside: avoid;
 }
+
+#title {
+    margin-top: -0.5em;
+}

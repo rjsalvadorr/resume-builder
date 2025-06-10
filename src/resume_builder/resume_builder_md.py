@@ -31,7 +31,6 @@ def build_resume_exp_md(exp, openfile):
             f"_**{skill_header}** — {', '.join(exp["skills"])}_",
         ]
     ]
-    # openfile.write(f"{build_minimal_row_md_table(cells)}\n")
     openfile.write(f"{build_multiline_md_table(cells)}\n")
 
     for highlight in exp["highlights"]:

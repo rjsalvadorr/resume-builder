@@ -92,7 +92,7 @@ def build_resume_full_md(resume_info):
     skill_cells = []
     for skill in resume_info["skills_qualifications"]:
         skill_cells.append(skill)
-    skills_table = build_minimal_row_md_table(skill_cells)
+    skills_table = build_multiline_md_table([skill_cells])
     out_file_full_md.write(skills_table)
     out_file_full_md.write("\n")
 
@@ -115,7 +115,7 @@ def build_resume_full_md(resume_info):
     # ------------
     # Technical Education
 
-    out_file_full_md.write(f"## Technical Education\n\n")
+    out_file_full_md.write(f"## Education\n\n")
 
     for edu_exp in sorted(resume_info["education"], key=sort_exp, reverse=True):
         build_resume_exp_md(edu_exp, out_file_full_md)

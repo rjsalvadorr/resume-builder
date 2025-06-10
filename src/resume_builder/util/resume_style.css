@@ -1,3 +1,7 @@
+/*-------------*\
+ * Core Styling
+\*-------------*/
+
 html {
     font-size: 100%;
     overflow-y: scroll;
@@ -8,9 +12,15 @@ html {
 body {
     color: #444;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 10.5pt;
+    line-height: 1.618033;
 }
+
+/*-------------*\
+ * Text
+\*-------------*/
+
+
 
 h1,
 h2,
@@ -19,6 +29,39 @@ h4,
 h5,
 h6 {
     font-family: 'Crimson Text', Times, 'Times New Roman', serif;
+}
+
+h1 {
+    font-size: 21.29pt;
+}
+
+h2 {
+    font-size: 18.92pt;
+}
+
+h3 {
+    font-size: 16.82pt;
+}
+
+h4 {
+    font-size: 14.95pt;
+}
+
+h5 {
+    font-size: 13.29pt;
+}
+
+h6 {
+    font-size: 11.81pt;
+}
+
+p {
+    margin: 0.5em 0 0.5em 0;
+}
+
+ul {
+    margin: 0.125em 0 0.5em 0;
+    padding-inline-start: 1.618033em;
 }
 
 pre,
@@ -31,18 +74,89 @@ samp {
     font-size: 0.98em;
 }
 
+/*-------------*\
+ * Headings
+\*-------------*/
+
+#title {
+    margin-top: 0;
+    margin-bottom: 0.167em;
+}
+
+#subtitle {
+    margin-top: 0;
+}
+
+h2,
+h3 {
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 0.667em;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    line-height: 1.4;
+}
+
+h3 {
+    margin-top: 0.75em;
+}
+
+h3.exp-heading {
+    margin-bottom: -0.075em;
+    line-height: 1.25;
+}
+
+/* This needs to be after all the heading rules */
+h2+* {
+    margin-top: 0.333em
+}
+
+/*-------------*\
+ * Tables
+\*-------------*/
+
 table tr td {
     vertical-align: top;
 }
 
-.exp-heading+table tr td:first-of-type {
-    background-color: #fcc;
+.exp-heading+table tr td,
+#subtitle+table tr td {
+    line-height: 1.5;
+    font-size: 0.96875em;
 }
 
-#subtitle+table tr td:first-of-type {
+/* .exp-heading+table tr td:first-of-type {
+    background-color: #fcc;
+} */
+
+/* #subtitle+table tr td:first-of-type {
     background-color: #cfc;
+} */
+
+#skills-quals+table {
+    margin-top: 0.125em;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+#skills-quals+table td {
+    padding-left: 1rem;
+    width: 33%;
 }
 
 #skills-quals+table tr td:first-of-type {
-    background-color: #ccf;
+    padding-left: 0;
+}
+
+/*-------------*\
+ * Lists
+\*-------------*/
+
+.exp-heading~ul li {
+    line-height: 1.5;
+    letter-spacing: 0.005em;
 }

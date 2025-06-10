@@ -19,7 +19,7 @@ def build_resume_exp_md(exp, openfile):
     elif exp["exp_type"] == "project":
         exp_title = exp["project_name"]
 
-    openfile.write(f"### {exp_title}, {exp["org_name"]} {{.exp-heading}}\n\n")
+    openfile.write(f"### {exp_title} — _{exp["org_name"]}_ {{.exp-heading}}\n\n")
 
     start_date_str = format_date(exp["start_date"])
     end_date_str = "Present" if not exp["end_date"] else format_date(exp["end_date"])

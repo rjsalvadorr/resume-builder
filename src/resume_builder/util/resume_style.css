@@ -14,6 +14,7 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 10.5pt;
     line-height: 1.618033;
+    padding: 0;
 }
 
 /*-------------*\
@@ -29,6 +30,7 @@ h4,
 h5,
 h6 {
     font-family: 'Crimson Text', Times, 'Times New Roman', serif;
+    opacity: 0.875;
 }
 
 h1 {
@@ -61,7 +63,10 @@ p {
 
 ul {
     margin: 0.125em 0 0.5em 0;
-    padding-inline-start: 1.618033em;
+}
+
+ul li {
+    margin-left: -1.25em;
 }
 
 pre,
@@ -80,11 +85,24 @@ samp {
 
 #title {
     margin-top: 0;
-    margin-bottom: 0.167em;
+    margin-bottom: -0.25em;
+    font-size: 40.05pt;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
 }
 
 #subtitle {
     margin-top: 0;
+    font-size: 21.77pt;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    border-bottom: 1.25pt solid grey;
+    margin-bottom: 0.25em;
+    opacity: 0.875;
+}
+
+#objective {
+    margin-top: 0.25em;
 }
 
 h2,
@@ -94,8 +112,8 @@ h3 {
 
 h2 {
     margin-top: 0.667em;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-top: 1pt solid grey;
+    border-bottom: 1pt solid grey;
     line-height: 1.4;
 }
 

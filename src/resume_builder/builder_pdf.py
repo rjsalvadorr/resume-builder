@@ -1,6 +1,6 @@
 import pandoc
 from pandoc.types import *
-from .resume_builder_utils import print_splash, format_phone_num, format_date
+from .utils import print_splash, format_phone_num, format_date
 
 
 def build_resume_full_pdf():

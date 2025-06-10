@@ -1,4 +1,4 @@
-from .resume_builder_utils import format_phone_num, format_date
+from .utils import format_phone_num, format_date
 
 
 def build_resume_full_txt(resume_info):

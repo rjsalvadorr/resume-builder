@@ -19,7 +19,7 @@ def build_resume_exp_md(exp, openfile):
     elif exp["exp_type"] == "project":
         exp_title = exp["project_name"]
 
-    openfile.write(f"### {exp_title}, {exp["org_name"]}\n\n")
+    openfile.write(f"### {exp_title}, {exp["org_name"]} {{.exp-heading}}\n\n")
 
     start_date_str = format_date(exp["start_date"])
     end_date_str = "Present" if not exp["end_date"] else format_date(exp["end_date"])
@@ -47,8 +47,8 @@ def build_resume_full_md(resume_info):
 
     # print_splash(out_file_full_md, "md")
 
-    out_file_full_md.write(f"# {resume_info["name"]}\n\n")
-    out_file_full_md.write(f"### {resume_info["subtitle"]}\n\n")
+    out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
+    out_file_full_md.write(f"### {resume_info["subtitle"]} {{#subtitle}}\n\n")
 
     # ------------
     # Contact Info
@@ -87,7 +87,7 @@ def build_resume_full_md(resume_info):
     # ------------
     # Skills & Qualifications
 
-    out_file_full_md.write(f"## Skills & Qualifications\n\n")
+    out_file_full_md.write(f"## Skills & Qualifications {{#skills-quals}}\n\n")
 
     skill_cells = []
     for skill in resume_info["skills_qualifications"]:

@@ -7,7 +7,12 @@ def build_resume_full_html():
     markdown_data = open("build/resume-full.md", "r", encoding="utf-8")
     doc = pandoc.read(markdown_data.read())
 
-    write_opts = ["--css", "src/resume_builder/util/resume_style.css", "--standalone"]
+    write_opts = [
+        "--embed-resources",
+        "--standalone",
+        "--css",
+        "src/resume_builder/util/r_style.css",
+    ]
     pandoc.write(doc, "build/resume-full.html", format="html", options=write_opts)
 
     return 0

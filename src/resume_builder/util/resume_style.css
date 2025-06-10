@@ -7,13 +7,9 @@ html {
 
 body {
     color: #444;
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 1.7;
-    padding: 1em;
-    margin: auto;
-    max-width: 42em;
-    background: #fefefe;
 }
 
 h1,
@@ -22,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-family: 'Crimson Text', Times, 'Times New Roman', serif;
 }
 
 pre,
@@ -41,7 +37,6 @@ table tr td {
 
 .exp-heading+table tr td:first-of-type {
     background-color: #fcc;
-    width: 30%;
 }
 
 #subtitle+table tr td:first-of-type {

@@ -1,0 +1,10 @@
+body {
+    padding: 1em;
+    margin: auto;
+    max-width: 42em;
+    background: #fefefe;
+}
+
+.exp-heading+table tr td:first-of-type {
+    width: 30%;
+}

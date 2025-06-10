@@ -11,7 +11,9 @@ def build_resume_full_html():
         "--embed-resources",
         "--standalone",
         "--css",
-        "src/resume_builder/util/r_style.css",
+        "src/resume_builder/util/resume_style.css",
+        "--css",
+        "src/resume_builder/util/resume_web.css",
     ]
     pandoc.write(doc, "build/resume-full.html", format="html", options=write_opts)
 

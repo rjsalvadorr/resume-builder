@@ -10,7 +10,9 @@ def build_resume_full_pdf():
     weasyprint_opts = "-e utf8 --hinting"
     write_opts = [
         "--css",
-        "src/resume_builder/util/r_style.css",
+        "src/resume_builder/util/resume_style.css",
+        "--css",
+        "src/resume_builder/util/resume_print.css",
         "--to",
         "html",
         "--pdf-engine-opt",

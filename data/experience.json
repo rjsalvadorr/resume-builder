@@ -112,8 +112,8 @@
             "start_date": "2024-07-15",
             "end_date": "2024-11-15",
             "skills": [
-                "Azure Cognitive Services",
-                "Nest"
+                "Azure Cognitive Services for computer vision and document parsing",
+                "NestJS"
             ],
             "highlights": [
                 "Partnered with a financial transaction processor working closely with the \"Big Five\" Canadian banks.",
@@ -126,7 +126,7 @@
             "org_name": "Humber College",
             "org_location": "Toronto, Canada",
             "exp_type": "education",
-            "education_cred": "Ont. College Diploma (Computer Programmer)",
+            "education_cred": "Ontario College Diploma (Computer Programmer)",
             "start_date": "2012-09-15",
             "end_date": "2014-04-15",
             "skills": [

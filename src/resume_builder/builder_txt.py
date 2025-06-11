@@ -1,4 +1,4 @@
-from .utils import format_phone_num, format_date
+from .utils import format_phone_num, format_date, sort_exp
 
 
 def build_resume_full_txt(resume_info):
@@ -43,8 +43,8 @@ def build_resume_full_txt(resume_info):
 
     out_file_full_txt.write(f"TECHNICAL EXPERIENCE\n\n")
 
-    for work_exp in resume_info["work_experience"]:
-        out_file_full_txt.write(f"{work_exp["exp_role"]}, {work_exp["org_name"]}\n\n")
+    for work_exp in sorted(resume_info["work_experience"], key=sort_exp, reverse=True):
+        out_file_full_txt.write(f"{work_exp["exp_role"]} — {work_exp["org_name"]}\n\n")
 
         start_date_str = format_date(work_exp["start_date"])
         end_date_str = (
@@ -64,9 +64,9 @@ def build_resume_full_txt(resume_info):
 
     out_file_full_txt.write(f"PROJECTS\n\n")
 
-    for proj_exp in resume_info["projects"]:
+    for proj_exp in sorted(resume_info["projects"], key=sort_exp, reverse=True):
         out_file_full_txt.write(
-            f"{proj_exp["project_name"]}, {proj_exp["org_name"]}\n\n"
+            f"{proj_exp["project_name"]} — {proj_exp["org_name"]}\n\n"
         )
         start_date_str = format_date(proj_exp["start_date"])
         end_date_str = (
@@ -82,11 +82,11 @@ def build_resume_full_txt(resume_info):
     # ------------
     # Technical Education
 
-    out_file_full_txt.write(f"TECHNICAL EDUCATION\n\n")
+    out_file_full_txt.write(f"EDUCATION\n\n")
 
-    for edu_exp in resume_info["education"]:
+    for edu_exp in sorted(resume_info["education"], key=sort_exp, reverse=True):
         out_file_full_txt.write(
-            f"{edu_exp["education_cred"]}, {edu_exp["org_name"]}\n\n"
+            f"{edu_exp["education_cred"]} — {edu_exp["org_name"]}\n\n"
         )
         start_date_str = format_date(edu_exp["start_date"])
         end_date_str = (
@@ -95,7 +95,7 @@ def build_resume_full_txt(resume_info):
         out_file_full_txt.write(f"{start_date_str} — {end_date_str}  \n")
         out_file_full_txt.write(f"{edu_exp["org_location"]}  \n")
         out_file_full_txt.write(
-            f"Core technologies — {', '.join(edu_exp["skills"])}\n\n"
+            f"Core skills — {', '.join(edu_exp["skills"])}\n\n"
         )
         for highlight in edu_exp["highlights"]:
             out_file_full_txt.write(f"- {highlight}\n")

@@ -62,7 +62,7 @@ p {
 }
 
 ul {
-    margin: 0.125em 0 0.5em 0;
+    margin: 0 0 0.5em 0;
 }
 
 ul li {
@@ -85,26 +85,26 @@ samp {
 
 #title {
     margin-top: 0;
-    margin-bottom: -0.25em;
-    font-size: 40.05pt;
-    line-height: 1.5;
+    margin-bottom: -0.3em;
+    font-size: 38.15pt;
+    line-height: 1.618033;
     letter-spacing: 0.01em;
     text-align: center;
 }
 
 #subtitle {
     margin-top: 0;
-    font-size: 21.77pt;
+    font-size: 18.14pt;
     letter-spacing: 0.01em;
     line-height: 1.5;
     border-bottom: 1.25pt solid grey;
-    margin-bottom: 0.125em;
+    margin-bottom: 0.075em;
     opacity: 0.875;
     text-align: center;
 }
 
 #objective {
-    margin-top: 0.2em;
+    margin-top: 0.075em;
 }
 
 h2,
@@ -113,24 +113,24 @@ h3 {
 }
 
 h2 {
-    margin-top: 0.667em;
+    margin-top: 0.333em;
     border-top: 1pt solid grey;
     border-bottom: 1pt solid grey;
-    line-height: 1.4;
+    line-height: 1.333;
 }
 
 h3 {
-    margin-top: 0.75em;
+    margin-top: 0.333em;
 }
 
 h3.exp-heading {
-    margin-bottom: -0.075em;
+    margin-bottom: -0.175em;
     line-height: 1.25;
 }
 
 /* This needs to be after all the heading rules */
 h2+* {
-    margin-top: 0.333em
+    margin-top: 0.3em
 }
 
 /*-------------*\
@@ -143,13 +143,17 @@ table tr td {
 
 .exp-heading+table tr td,
 #subtitle+table tr td {
-    line-height: 1.5;
+    line-height: 1.4;
     vertical-align: baseline;
 }
 
-/* .exp-heading+table tr td:first-of-type {
-    background-color: #fcc;
-    } */
+.exp-heading+table {
+    width: 100%;
+}
+
+.exp-heading+table tr td:first-of-type {
+    width: 25%;
+}
 
 #subtitle+table {
     width: 100%;
@@ -163,7 +167,7 @@ table tr td {
 
 #subtitle+table tr td img {
     display: inline-block;
-    height: 1.33em;
+    height: 1.25em;
     margin-bottom: -0.25em;
 }
 

@@ -18,7 +18,7 @@ def build_resume_full_md(resume_info):
     # Intro
 
     out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
-    out_file_full_md.write(f"### {resume_info["subtitle"]} {{#subtitle}}\n\n")
+    out_file_full_md.write(f"#### {resume_info["subtitle"]} {{#subtitle}}\n\n")
 
     # ------------
     # Contact Info
@@ -53,7 +53,9 @@ def build_resume_full_md(resume_info):
 
         contact_alt = f"Icon ({contact["type"]})"
         contact_icon = f'![{contact_alt}]({contact_icon_src} "{contact_alt}")'
-        contact_cells[contact_cells_row_idx].append(f"{contact_icon}&nbsp; [{copy}]({link})")
+        contact_cells[contact_cells_row_idx].append(
+            f"{contact_icon}&nbsp; [{copy}]({link})"
+        )
 
     contacts_table = build_minimal_md_table(contact_cells)
 

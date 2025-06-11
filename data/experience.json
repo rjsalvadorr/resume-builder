@@ -14,11 +14,13 @@
                 "Spring",
                 "Hibernate",
                 "Oracle 11g",
-                "Jenkins"
+                "Jenkins",
+                "Backbone.js",
+                "Marionette.js"
             ],
             "highlights": [
-                "Built webpages allowing car dealers to offer online credit applications. This linked their users to a system with 18,000+ dealerships with 1,400+ finance sources.",
-                "Ensured that webpages conformed to the responsive visual specs, and is usable on several browsers and devices."
+                "Built credit app. sites for car dealers, linking users to 18,000+ dealers with 1,400+ finance sources.",
+                "Ensured that webpages conformed to the visual specs (responsive, cross-browser, cross-platform)."
             ]
         },
         {
@@ -35,8 +37,8 @@
                 "Jenkins"
             ],
             "highlights": [
-                "Helped build a new React UI on a legacy app for the EHSQ industry. This allowed health and safety professionals to share industry knowledge about Intelex tools.",
-                "Focused on code quality standards as the codebase grew. Appointed to a working group that wrote guidelines for code style and structure, which proved useful in refactoring."
+                "Built a React UI on a legacy app allowing health and safety professionals to share best practices.",
+                "Focused on standards over time. Appointed to a group that wrote guidelines for code structure."
             ]
         },
         {
@@ -56,9 +58,9 @@
                 "Docker Microservices"
             ],
             "highlights": [
-                "Worked on Causeworks, a research project featuring graph visualizations that uncovered insights in complex scenarios.",
-                "Integrated a graph analysis module developed at Virginia Tech. This module described a scenario model with natural language for less technical users.",
-                "Reworked front-end components to align the UI closer to the company design system, reduce UX jankiness, and render visual data more effectively."
+                "Worked on Causeworks, a research app for understanding scenarios through graph analysis.",
+                "Integrated analysis modules from several third parties, including Virginia Tech researchers",
+                "Reworked the front-end to align the UI to our design system, and render data more effectively."
             ]
         },
         {
@@ -77,7 +79,8 @@
                 "AEM"
             ],
             "highlights": [
-                "As part of the kick-off dev team, helped lay the technical foundations of a forward-looking app for a leading healthcare provider. These foundations allowed for rapid component development even while dependent design system assets lagged in delivery."
+                "Helped lay the technical foundations of a forward-looking app for a leading healthcare provider.",
+                "These foundations allowed for rapid development even while dependent assets lagged in delivery."
             ]
         },
         {
@@ -96,9 +99,9 @@
                 "ADSK Viewer/Forge/LMV"
             ],
             "highlights": [
-                "Worked in the team behind Autodesk Takeoff, a web-based takeoff and estimation tool for 2D sheets and 3D models.",
-                "Focused on improving the app's UX through implementing new functionality, reworking existing elements, or refactoring under the hood.",
-                "Leveraged in-house component libraries to build UI modules. Collaborated with design system experts to keep implementation consistent with the overall Autodesk Construction Cloud platform."
+                "Worked on Autodesk Takeoff, an online construction estimation tool for 2D sheets and 3D models.",
+                "Leveraged in-house component libraries to build, extend, and maintain UI modules.",
+                "Kept our UX consistent with the Autodesk Cloud platform, working with experts where needed."
             ]
         },
         {
@@ -114,7 +117,7 @@
             ],
             "highlights": [
                 "Partnered with a financial transaction processor working closely with the \"Big Five\" Canadian banks.",
-                "Maintained and upgraded cloud apps which leverage Azure Cognitive Services for anti-fraud verification."
+                "Upgraded cloud apps which leverage Azure Cognitive Services for anti-fraud verification."
             ]
         }
     ],
@@ -152,8 +155,7 @@
                 "Adobe Illustrator & Photoshop"
             ],
             "highlights": [
-                "Learned to work with 2D and 3D graphics at a demanding level of precision",
-                "Helped start a student network for architectural/interior design students (Designer/Webmaster, Architectural Studies Collective)"
+                "Learned to create 2D/3D models to industry standards, plus architectural theory and bldg. science"
             ]
         },
         {
@@ -164,11 +166,12 @@
             "start_date": "2024-07-15",
             "end_date": "2024-09-15",
             "skills": [
-                "Figma"
+                "Figma",
+                "Web Design Theory",
+                "Design Systems"
             ],
             "highlights": [
-                "Learned industry-standard processes for UX design (User interviews and testing, Wireframing, UI design, etc).",
-                "Implemented the full UX process in a final project: designing an app for community volunteering."
+                "Learned industry-standard processes for UX design (interviews, testing, wireframing, visuals, etc)."
             ]
         }
     ],
@@ -188,7 +191,7 @@
                 "Open Source Development"
             ],
             "highlights": [
-                "sw-jscad is an open-source NPM library that extends JSCAD, which can create parametric 2D and 3D CAD designs with JavaScript code.",
+                "sw-jscad is an NPM library that extends JSCAD to create 2D and 3D designs with JavaScript.",
                 "The library is in active development to support design efforts for my family's side business."
             ]
         }

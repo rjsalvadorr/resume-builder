@@ -85,8 +85,8 @@ samp {
 
 #title {
     margin-top: 0;
-    margin-bottom: -0.3em;
-    font-size: 38.15pt;
+    margin-bottom: -0.4em;
+    font-size: 39.1pt;
     line-height: 1.618033;
     letter-spacing: 0.01em;
     text-align: center;
@@ -96,11 +96,20 @@ samp {
     margin-top: 0;
     font-size: 17.71pt;
     letter-spacing: 0.01em;
-    line-height: 1.5;
+    line-height: 1.618033;
     border-bottom: 1.25pt solid grey;
     margin-bottom: 0.075em;
     opacity: 0.875;
     text-align: center;
+}
+
+#title+p br {
+    display: none;
+}
+
+#title+p img {
+    position: absolute;
+    height: 54pt;
 }
 
 #objective {
@@ -168,7 +177,7 @@ table tr td {
 #subtitle+table tr td img {
     display: inline-block;
     height: 1.175em;
-    margin-bottom: -0.25em;
+    margin-bottom: -0.2em;
 }
 
 /* #subtitle+table tr td:first-of-type {

@@ -10,3 +10,12 @@ table {
 #title {
     margin-top: -0.5em;
 }
+
+#title+p img {
+    top: 0;
+}
+
+#title+p img:last-of-type {
+    left: initial;
+    right: 5pt;
+}

@@ -18,6 +18,8 @@ def build_resume_full_md(resume_info):
     # Intro
 
     out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
+    out_file_full_md.write("![](src/resume_builder/icons/icon-shell.svg \"Decorative icon (left)\")  \n")
+    out_file_full_md.write("![](src/resume_builder/icons/icon-merlion.svg \"Decorative icon (right)\")\n\n")
     out_file_full_md.write(f"#### {resume_info["subtitle"]} {{#subtitle}}\n\n")
 
     # ------------

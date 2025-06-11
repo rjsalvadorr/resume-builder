@@ -195,5 +195,23 @@
                 "The library is in active development to support design efforts for my family's side business."
             ]
         }
+    ],
+    "volunteering": [
+        {
+            "org_name": "St. Vincent de Paul Parish",
+            "org_location": "Roncesvalles, Toronto, Canada",
+            "exp_type": "volunteering",
+            "exp_role": "Singer / Cantor",
+            "start_date": "2024-08-15",
+            "end_date": null,
+            "skills": [
+                "Gregorian chant",
+                "Choral musicianship"
+            ],
+            "highlights": [
+                "Serving my community by reconnecting parishioners with ancient Catholic musical traditions.",
+                "Duties involve singing with the choir at masses, leading chant during communal prayer, etc."
+            ]
+        }
     ]
 }

@@ -37,6 +37,7 @@ def parse_resume():
             "work_experience": experience_info["work_experience"],
             "education": experience_info["education"],
             "projects": experience_info["projects"],
+            "volunteering": experience_info["volunteering"],
         },
         "cover": cover_info,
     }

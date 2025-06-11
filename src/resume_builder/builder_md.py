@@ -105,6 +105,14 @@ def build_resume_full_md(resume_info):
         build_resume_exp_md(edu_exp, out_file_full_md)
 
     # ------------
+    # Volunteering
+
+    out_file_full_md.write(f"## Volunteering\n\n")
+
+    for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
+        build_resume_exp_md(vol_exp, out_file_full_md)
+
+    # ------------
     # About Me
 
     out_file_full_md.write(f"## About Me\n\n")

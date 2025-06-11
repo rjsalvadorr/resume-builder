@@ -12,8 +12,8 @@ html {
 body {
     color: #444;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.618033;
+    font-size: 10.25pt;
+    line-height: 1.575;
     padding: 0;
 }
 
@@ -34,27 +34,27 @@ h6 {
 }
 
 h1 {
-    font-size: 21.29pt;
+    font-size: 20.78pt;
 }
 
 h2 {
-    font-size: 18.92pt;
+    font-size: 18.47pt;
 }
 
 h3 {
-    font-size: 16.82pt;
+    font-size: 16.42pt;
 }
 
 h4 {
-    font-size: 14.95pt;
+    font-size: 14.59pt;
 }
 
 h5 {
-    font-size: 13.29pt;
+    font-size: 12.97pt;
 }
 
 h6 {
-    font-size: 11.81pt;
+    font-size: 11.53pt;
 }
 
 p {
@@ -94,7 +94,7 @@ samp {
 
 #subtitle {
     margin-top: 0;
-    font-size: 18.14pt;
+    font-size: 17.71pt;
     letter-spacing: 0.01em;
     line-height: 1.5;
     border-bottom: 1.25pt solid grey;
@@ -116,7 +116,7 @@ h2 {
     margin-top: 0.333em;
     border-top: 1pt solid grey;
     border-bottom: 1pt solid grey;
-    line-height: 1.333;
+    line-height: 1.2;
 }
 
 h3 {
@@ -125,7 +125,7 @@ h3 {
 
 h3.exp-heading {
     margin-bottom: -0.175em;
-    line-height: 1.25;
+    line-height: 1.15;
 }
 
 /* This needs to be after all the heading rules */
@@ -143,7 +143,7 @@ table tr td {
 
 .exp-heading+table tr td,
 #subtitle+table tr td {
-    line-height: 1.4;
+    line-height: 1.333;
     vertical-align: baseline;
 }
 
@@ -167,7 +167,7 @@ table tr td {
 
 #subtitle+table tr td img {
     display: inline-block;
-    height: 1.25em;
+    height: 1.175em;
     margin-bottom: -0.25em;
 }
 

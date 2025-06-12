@@ -12,10 +12,10 @@ table {
 }
 
 #title+p img {
-    top: 0;
+    top: 4pt;
 }
 
 #title+p img:last-of-type {
     left: initial;
-    right: 5pt;
+    right: 4pt;
 }

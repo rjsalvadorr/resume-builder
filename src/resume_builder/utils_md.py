@@ -241,4 +241,4 @@ def format_exp_title_md(str):
 
 def format_skill_qual_md(str):
     lines = str.split("<br>")
-    return f"_**{lines[0]}**_<br>{lines[1]}"
+    return f"**{lines[0]}**<br>{lines[1]}"

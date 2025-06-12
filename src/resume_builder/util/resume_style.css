@@ -61,6 +61,11 @@ p {
     margin: 0.5em 0 0.5em 0;
 }
 
+p,
+td {
+    letter-spacing: 0.0075em;
+}
+
 ul {
     margin: 0 0 0.5em 0;
 }
@@ -130,14 +135,16 @@ h2 {
     border-top: 1pt solid silver;
     border-bottom: 1pt solid silver;
     line-height: 1.29;
+    letter-spacing: 0.02em;
 }
 
 h3 {
     margin-top: 0.333em;
+    letter-spacing: 0.015em;
 }
 
 h3.exp-heading {
-    margin-bottom: -0.175em;
+    margin-bottom: -0.167em;
     line-height: 1.15;
 }
 
@@ -158,6 +165,7 @@ table tr td {
 #subtitle+table tr td {
     line-height: 1.333;
     vertical-align: baseline;
+    letter-spacing: 0.015em;
 }
 
 .exp-heading+table {
@@ -190,7 +198,6 @@ table tr td {
 
 #skills-quals+table {
     margin-top: 0.3em;
-    margin-bottom: 0.667em;
     border-spacing: 0;
     border-collapse: collapse;
     table-layout: fixed;
@@ -212,5 +219,5 @@ table tr td {
 
 .exp-heading~ul li {
     line-height: 1.5;
-    letter-spacing: 0.005em;
+    letter-spacing: 0.0075em;
 }

@@ -8,15 +8,15 @@
             "start_date": "2014-09-15",
             "end_date": "2016-10-15",
             "skills": [
-                "jQuery",
                 "Java/J2EE",
-                "Struts",
                 "Spring",
+                "Struts",
                 "Hibernate",
                 "Oracle 11g",
-                "Jenkins",
+                "jQuery",
                 "Backbone.js",
-                "Marionette.js"
+                "Marionette.js",
+                "Jenkins"
             ],
             "highlights": [
                 "Built credit app. sites for car dealers, linking users to 18,000+ dealers with 1,400+ finance sources.",

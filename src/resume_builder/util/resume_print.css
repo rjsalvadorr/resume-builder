@@ -9,6 +9,11 @@ table {
 
 #title {
     margin-top: -0.5em;
+    letter-spacing: 0.125em;
+}
+
+#subtitle {
+    letter-spacing: 0.225em;
 }
 
 #title+p img {

@@ -19,3 +19,7 @@ table {
     left: initial;
     right: 4pt;
 }
+
+#skills-quals+table {
+    width: 96%;
+}

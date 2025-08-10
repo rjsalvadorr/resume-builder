@@ -67,7 +67,7 @@ td {
 }
 
 ul {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0.25em 0;
 }
 
 ul li {
@@ -90,7 +90,7 @@ samp {
 
 #title {
     margin-top: 0;
-    margin-bottom: -0.425em;
+    margin-bottom: -0.475em;
     font-size: 39.1pt;
     line-height: 1.618033;
     letter-spacing: 0.075em;
@@ -103,7 +103,7 @@ samp {
     letter-spacing: 0.2em;
     line-height: 1.618033;
     border-bottom: 1.25pt solid lightslategrey;
-    margin-bottom: 0.075em;
+    margin-bottom: 0;
     opacity: 0.875;
     text-align: center;
 }
@@ -131,15 +131,15 @@ h3 {
 }
 
 h2 {
-    margin-top: 0.333em;
+    margin-top: 0.25em;
     border-top: 1pt solid silver;
     border-bottom: 1pt solid silver;
-    line-height: 1.29;
+    line-height: 1.175;
     letter-spacing: 0.075em;
 }
 
 h3 {
-    margin-top: 0.333em;
+    margin-top: 0.2em;
     letter-spacing: 0.015em;
 }
 

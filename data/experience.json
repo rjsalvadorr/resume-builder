@@ -197,18 +197,21 @@
             "org_name": "Guild of St. Isidore (TO)",
             "org_location": "Toronto, Canada",
             "exp_type": "project",
-            "project_name": "Editoris Melicorum (EMEL)",
+            "project_name": "Fabrica Virtualis (FAVI)",
             "exp_role": "Lead Developer",
             "start_date": "2025-06-02",
             "end_date": null,
             "skills": [
+                "System Design",
+                "API Design",
+                "Docker Microservices",
+                "DevOps",
+                "JavaScript",
                 "Python",
-                "LilyPond",
-                "Gregorio/GABC",
                 "Open Source Dev't"
             ],
             "highlights": [
-                "EMEL is an open source music typesetting tool for Catholic parishes, specializing in Gregorian chant."
+                "FAVI is an open source toolkit for Catholic parishes, creative ministries, musicians, and artists."
             ]
         }
     ],

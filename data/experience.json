@@ -184,9 +184,11 @@
             "start_date": "2025-01-15",
             "end_date": null,
             "skills": [
-                "npm",
                 "3D Modeling",
                 "CAD/CAM Software",
+                "Library/Package Design",
+                "JavaScript",
+                "NPM Ecoystem",
                 "Open Source Dev't"
             ],
             "highlights": [
@@ -208,6 +210,7 @@
                 "DevOps",
                 "JavaScript",
                 "Python",
+                "PyPI Ecosystem",
                 "Open Source Dev't"
             ],
             "highlights": [

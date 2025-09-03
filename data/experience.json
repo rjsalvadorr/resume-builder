@@ -13,9 +13,9 @@
                 "Struts",
                 "Hibernate",
                 "Oracle 11g",
+                "JavaScript",
                 "jQuery",
-                "Backbone.js",
-                "Marionette.js",
+                "HTML/CSS",
                 "Jenkins"
             ],
             "highlights": [
@@ -31,6 +31,8 @@
             "start_date": "2017-06-15",
             "end_date": "2019-02-15",
             "skills": [
+                "JavaScript",
+                "HTML/CSS",
                 "React",
                 ".NET",
                 "SQL Server",
@@ -54,8 +56,9 @@
                 "Node.js",
                 "Express.js",
                 "Python",
-                "AWS",
-                "Docker Microservices"
+                "Docker Microservices",
+                "JavaScript",
+                "HTML/CSS"
             ],
             "highlights": [
                 "Worked on Causeworks, a research app for understanding scenarios through graph analysis.",
@@ -74,7 +77,9 @@
                 "React",
                 "Next.js",
                 "Nx",
+                "JavaScript",
                 "Typescript",
+                "HTML/CSS",
                 "Storybook",
                 "AEM"
             ],
@@ -93,9 +98,11 @@
                 "React",
                 "Node.js",
                 "Typescript",
+                "JavaScript",
+                "HTML/CSS",
                 "Storybook",
                 "Revit",
-                "ADSK Viewer/Forge/LMV"
+                "ADSK Forge/LMV"
             ],
             "highlights": [
                 "Worked on Autodesk Takeoff, an online construction estimation tool for 2D sheets and 3D models.",
@@ -111,6 +118,7 @@
             "start_date": "2024-07-15",
             "end_date": "2024-11-15",
             "skills": [
+                "JavaScript",
                 "Azure Cognitive Services for computer vision and document parsing",
                 "NestJS"
             ],
@@ -130,8 +138,8 @@
             "end_date": "2014-04-15",
             "skills": [
                 "Java",
-                "HTML",
-                "CSS",
+                "JavaScript",
+                "HTML/CSS",
                 "JavaScript",
                 "Oracle 11g",
                 "Git"

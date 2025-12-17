@@ -116,7 +116,7 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Volunteering\n\n")
 
     for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
-        out_file_full_md.write(f"### {vol_exp["exp_role"]} — {vol_exp["org_name"]}\n\n")
+        out_file_full_md.write(f"### {vol_exp["exp_role"]} — _{vol_exp["org_name"]}_\n\n")
         start_date_str = format_date(vol_exp["start_date"])
         end_date_str = (
             "Present" if not vol_exp["end_date"] else format_date(vol_exp["end_date"])

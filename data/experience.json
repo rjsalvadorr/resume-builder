@@ -193,7 +193,8 @@
             "end_date": null,
             "skills": [
                 "JavaScript",
-                "Node.js + NPM",
+                "Node.js",
+                "NPM publishing",
                 "3D Modeling",
                 "CAD/CAM Software"
             ],
@@ -233,7 +234,7 @@
                 "System-UI / Theme-UI"
             ],
             "highlights": [
-                "LibRext is a classicist UI design system and component library for screen and paper."
+                "LibRext is a classicist UI design system and component library for screen and paper, and e-readers."
             ]
         }
     ],

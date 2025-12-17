@@ -1,6 +1,10 @@
 {
     "contacts": [
         {
+            "type": "website",
+            "info": "https://rjsalvadorr.com"
+        },
+        {
             "type": "email",
             "info": "salvador.workshop@gmail.com"
         },
@@ -9,20 +13,16 @@
             "info": "https://linkedin.com/in/rjsalvadorr"
         },
         {
-            "type": "phone",
-            "info": "6474604027"
-        },
-        {
-            "type": "website",
-            "info": "https://rjsalvadorr.com"
-        },
-        {
             "type": "github",
             "info": "https://github.com/guild-st-isidore-TO"
         },
         {
             "type": "github",
-            "info": "https://github.com/rjsalvadorr"
+            "info": "https://github.com/salvador-workshop"
+        },
+        {
+            "type": "phone",
+            "info": "6474604027"
         }
     ]
 }

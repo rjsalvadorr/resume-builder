@@ -169,19 +169,17 @@ def build_resume_exp_md_pandoc(exp, openfile):
     end_date_str = "Present" if not exp["end_date"] else format_date(exp["end_date"])
 
     skill_header = "Core skills"
-    # skill_header = "Core technologies" if exp["exp_type"] == "work" else "Core skills"
+
     if exp["exp_type"] == "work":
         skill_header = "Core technologies"
     elif exp["exp_type"] == "volunteering":
         skill_header = "Skills"
 
-    cells = [
-        [
-            f"_**{start_date_str} — {end_date_str}**\n{exp["org_location"]}_",
-            f"_**{skill_header}** — {', '.join(exp["skills"])}_",
-        ]
-    ]
-    openfile.write(f"{build_multiline_md_table(cells)}\n")
+    spacer = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+    openfile.write(
+        f"_**{start_date_str} — {end_date_str}** {spacer} {exp["org_location"]}_  \n"
+    )
+    openfile.write(f"_**{skill_header}** — {', '.join(exp["skills"])}_\n\n")
 
     for highlight in exp["highlights"]:
         openfile.write(f"- {highlight}\n")

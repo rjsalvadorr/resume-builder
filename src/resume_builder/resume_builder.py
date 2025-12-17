@@ -9,14 +9,21 @@ from . import (
     builder_txt,
 )
 
+build_opts_all = {
+    "skip": []
+}
+
+build_opts = {
+    "skip": ["volunteering"]
+}
 
 def build_resume_full(complete_resume_info):
-    builder_txt.build_resume_full_txt(complete_resume_info["resume"])
+    builder_txt.build_resume_full_txt(complete_resume_info["resume"], build_opts)
     # the HTML builder uses the markdown file as its data source
-    builder_md.build_resume_full_md(complete_resume_info["resume"])
-    builder_md_pandoc.build_resume_full_md_pandoc(complete_resume_info["resume"])
-    builder_html.build_resume_full_html()
-    builder_pdf.build_resume_full_pdf()
+    builder_md.build_resume_full_md(complete_resume_info["resume"], build_opts_all)
+    builder_md_pandoc.build_resume_full_md_pandoc(complete_resume_info["resume"], build_opts)
+    builder_html.build_resume_full_html(build_opts)
+    builder_pdf.build_resume_full_pdf(build_opts)
 
     return 0
 

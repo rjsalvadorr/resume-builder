@@ -3,7 +3,7 @@ from pandoc.types import *
 from .utils import print_splash, format_phone_num, format_date
 
 
-def build_resume_full_pdf():
+def build_resume_full_pdf(build_opts):
     markdown_data = open("build/resume-full-pandoc.md", "r", encoding="utf-8")
     doc = pandoc.read(markdown_data.read())
 

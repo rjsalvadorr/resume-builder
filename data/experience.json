@@ -215,7 +215,7 @@
                 "Historical Music Theory"
             ],
             "highlights": [
-                "EdiMeli is a music typesetting toolkit for musicians working with Gregorian notation."
+                "EdiMeli is a music typesetting toolkit for musicians working with Gregorian notation (square notes)."
             ]
         },
         {
@@ -234,7 +234,7 @@
                 "Historical Visual Design"
             ],
             "highlights": [
-                "LibRext is a classicist UI design system and component library for screen and paper, and e-readers."
+                "LibRext is a classicist UI design system and component library for screen, paper, and e-readers."
             ]
         }
     ],

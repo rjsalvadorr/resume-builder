@@ -11,7 +11,7 @@ from .utils_md import (
 )
 
 
-def build_resume_full_md_pandoc(resume_info):
+def build_resume_full_md_pandoc(resume_info, build_opts):
     out_file_full_md = open("build/resume-full-pandoc.md", "w", encoding="utf-8")
 
     # -----
@@ -108,11 +108,11 @@ def build_resume_full_md_pandoc(resume_info):
 
     # ------------
     # Volunteering
+    if "volunteering" not in build_opts["skip"]:
+        out_file_full_md.write(f"## Volunteering\n\n")
 
-    out_file_full_md.write(f"## Volunteering\n\n")
-
-    for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
-        build_resume_exp_md_pandoc(vol_exp, out_file_full_md)
+        for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
+            build_resume_exp_md_pandoc(vol_exp, out_file_full_md)
 
     # ------------
     # About Me

@@ -1,7 +1,7 @@
 from .utils import format_phone_num, format_date, sort_exp
 
 
-def build_resume_full_md(resume_info):
+def build_resume_full_md(resume_info, build_opts):
     out_file_full_md = open("build/resume-full.md", "w", encoding="utf-8")
 
     # -----
@@ -112,22 +112,22 @@ def build_resume_full_md(resume_info):
 
     # ------------
     # Volunteering
+    if "volunteering" not in build_opts["skip"]:
+        out_file_full_md.write(f"## Volunteering\n\n")
 
-    out_file_full_md.write(f"## Volunteering\n\n")
-
-    for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
-        out_file_full_md.write(f"### {vol_exp["exp_role"]} — _{vol_exp["org_name"]}_\n\n")
-        start_date_str = format_date(vol_exp["start_date"])
-        end_date_str = (
-            "Present" if not vol_exp["end_date"] else format_date(vol_exp["end_date"])
-        )
-        out_file_full_md.write(
-            f"**{start_date_str} — {end_date_str}** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {vol_exp["org_location"]}  \n"
-        )
-        out_file_full_md.write(f"**Key skills** — {', '.join(vol_exp["skills"])}\n\n")
-        for highlight in vol_exp["highlights"]:
-            out_file_full_md.write(f"- {highlight}\n")
-        out_file_full_md.write("\n")
+        for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
+            out_file_full_md.write(f"### {vol_exp["exp_role"]} — _{vol_exp["org_name"]}_\n\n")
+            start_date_str = format_date(vol_exp["start_date"])
+            end_date_str = (
+                "Present" if not vol_exp["end_date"] else format_date(vol_exp["end_date"])
+            )
+            out_file_full_md.write(
+                f"**{start_date_str} — {end_date_str}** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {vol_exp["org_location"]}  \n"
+            )
+            out_file_full_md.write(f"**Key skills** — {', '.join(vol_exp["skills"])}\n\n")
+            for highlight in vol_exp["highlights"]:
+                out_file_full_md.write(f"- {highlight}\n")
+            out_file_full_md.write("\n")
 
     # ------------
     # About Me

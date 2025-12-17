@@ -1,7 +1,7 @@
 from .utils import format_phone_num, format_date, sort_exp
 
 
-def build_resume_full_txt(resume_info):
+def build_resume_full_txt(resume_info, build_opts):
     out_file_full_txt = open("build/resume-full.txt", "w", encoding="utf-8")
 
     # -----
@@ -94,9 +94,7 @@ def build_resume_full_txt(resume_info):
         )
         out_file_full_txt.write(f"{start_date_str} — {end_date_str}  \n")
         out_file_full_txt.write(f"{edu_exp["org_location"]}  \n")
-        out_file_full_txt.write(
-            f"Core skills — {', '.join(edu_exp["skills"])}\n\n"
-        )
+        out_file_full_txt.write(f"Core skills — {', '.join(edu_exp["skills"])}\n\n")
         for highlight in edu_exp["highlights"]:
             out_file_full_txt.write(f"- {highlight}\n")
         out_file_full_txt.write("\n")
@@ -104,24 +102,25 @@ def build_resume_full_txt(resume_info):
     # ------------
     # Volunteering
 
-    out_file_full_txt.write(f"VOLUNTEERING\n\n")
+    if "volunteering" not in build_opts["skip"]:
+        out_file_full_txt.write(f"VOLUNTEERING\n\n")
 
-    for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
-        out_file_full_txt.write(
-            f"{vol_exp["exp_role"]} — {vol_exp["org_name"]}\n\n"
-        )
-        start_date_str = format_date(vol_exp["start_date"])
-        end_date_str = (
-            "Present" if not vol_exp["end_date"] else format_date(vol_exp["end_date"])
-        )
-        out_file_full_txt.write(f"{start_date_str} — {end_date_str}  \n")
-        out_file_full_txt.write(f"{vol_exp["org_location"]}  \n")
-        out_file_full_txt.write(
-            f"Core skills — {', '.join(vol_exp["skills"])}\n\n"
-        )
-        for highlight in vol_exp["highlights"]:
-            out_file_full_txt.write(f"- {highlight}\n")
-        out_file_full_txt.write("\n")
+        for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
+            out_file_full_txt.write(
+                f"{vol_exp["exp_role"]} — {vol_exp["org_name"]}\n\n"
+            )
+            start_date_str = format_date(vol_exp["start_date"])
+            end_date_str = (
+                "Present"
+                if not vol_exp["end_date"]
+                else format_date(vol_exp["end_date"])
+            )
+            out_file_full_txt.write(f"{start_date_str} — {end_date_str}  \n")
+            out_file_full_txt.write(f"{vol_exp["org_location"]}  \n")
+            out_file_full_txt.write(f"Core skills — {', '.join(vol_exp["skills"])}\n\n")
+            for highlight in vol_exp["highlights"]:
+                out_file_full_txt.write(f"- {highlight}\n")
+            out_file_full_txt.write("\n")
 
     # ------------
     # About Me

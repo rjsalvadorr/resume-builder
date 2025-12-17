@@ -9,8 +9,7 @@
             "end_date": "2016-10-15",
             "skills": [
                 "Java/J2EE",
-                "Spring",
-                "Struts",
+                "Spring/Struts",
                 "Hibernate",
                 "Oracle 11g",
                 "JavaScript",
@@ -32,9 +31,9 @@
             "end_date": "2019-02-15",
             "skills": [
                 "JavaScript",
-                "HTML/CSS",
                 "React",
                 ".NET",
+                "HTML/CSS",
                 "SQL Server",
                 "Jenkins"
             ],
@@ -101,8 +100,7 @@
                 "JavaScript",
                 "HTML/CSS",
                 "Storybook",
-                "Revit",
-                "ADSK Forge/LMV"
+                "Revit"
             ],
             "highlights": [
                 "Worked on Autodesk Takeoff, an online construction estimation tool for 2D sheets and 3D models.",
@@ -118,8 +116,8 @@
             "start_date": "2024-07-15",
             "end_date": "2024-11-15",
             "skills": [
+                "Azure Cognitive Services (computer vision, doc. parsing)",
                 "JavaScript",
-                "Azure Cognitive Services for computer vision and document parsing",
                 "NestJS"
             ],
             "highlights": [
@@ -213,7 +211,9 @@
             "skills": [
                 "Python",
                 "LilyPond (LY)",
-                "GABC"
+                "GABC",
+                "Modern Music Theory",
+                "Historical Music Theory"
             ],
             "highlights": [
                 "EdiMeli is a music typesetting toolkit for musicians working with Gregorian notation."
@@ -231,7 +231,8 @@
                 "CSS",
                 "Node.js",
                 "NPM workspaces",
-                "System-UI / Theme-UI"
+                "System-UI",
+                "Historical Visual Design"
             ],
             "highlights": [
                 "LibRext is a classicist UI design system and component library for screen and paper, and e-readers."

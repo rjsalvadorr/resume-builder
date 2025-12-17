@@ -59,7 +59,7 @@ def build_resume_full_md(resume_info):
             "Present" if not work_exp["end_date"] else format_date(work_exp["end_date"])
         )
         out_file_full_md.write(
-            f"**{start_date_str} to {end_date_str}** — {work_exp["org_location"]}  \n"
+            f"**{start_date_str} — {end_date_str}** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {work_exp["org_location"]}  \n"
         )
         out_file_full_md.write(
             f"**Key technologies** — {', '.join(work_exp["skills"])}\n\n"
@@ -82,7 +82,7 @@ def build_resume_full_md(resume_info):
             "Present" if not proj_exp["end_date"] else format_date(proj_exp["end_date"])
         )
         out_file_full_md.write(
-            f"**{start_date_str} to {end_date_str}** — {proj_exp["org_location"]}  \n"
+            f"**{start_date_str} — {end_date_str}** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {proj_exp["org_location"]}  \n"
         )
         out_file_full_md.write(f"**Key skills** — {', '.join(proj_exp["skills"])}\n\n")
         for highlight in proj_exp["highlights"]:
@@ -103,7 +103,7 @@ def build_resume_full_md(resume_info):
             "Present" if not edu_exp["end_date"] else format_date(edu_exp["end_date"])
         )
         out_file_full_md.write(
-            f"**{start_date_str} to {end_date_str}** — {edu_exp["org_location"]}  \n"
+            f"**{start_date_str} — {end_date_str}** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {edu_exp["org_location"]}  \n"
         )
         out_file_full_md.write(f"**Key skills** — {', '.join(edu_exp["skills"])}\n\n")
         for highlight in edu_exp["highlights"]:
@@ -122,7 +122,7 @@ def build_resume_full_md(resume_info):
             "Present" if not vol_exp["end_date"] else format_date(vol_exp["end_date"])
         )
         out_file_full_md.write(
-            f"**{start_date_str} to {end_date_str}** — {vol_exp["org_location"]}  \n"
+            f"**{start_date_str} — {end_date_str}** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {vol_exp["org_location"]}  \n"
         )
         out_file_full_md.write(f"**Key skills** — {', '.join(vol_exp["skills"])}\n\n")
         for highlight in vol_exp["highlights"]:

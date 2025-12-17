@@ -188,7 +188,7 @@
             "org_location": "Toronto, Canada",
             "exp_type": "project",
             "project_name": "sw-jscad",
-            "exp_role": "Solo Developer",
+            "exp_role": "Lead Developer",
             "start_date": "2025-01-15",
             "end_date": null,
             "skills": [
@@ -207,22 +207,35 @@
             "org_name": "Guild of St. Isidore (TO)",
             "org_location": "Toronto, Canada",
             "exp_type": "project",
-            "project_name": "Fabrica Virtualis (FAVI)",
+            "project_name": "EdiMeli",
             "exp_role": "Lead Developer",
             "start_date": "2025-06-02",
             "end_date": null,
             "skills": [
-                "System Design",
-                "API Design",
-                "Docker Microservices",
-                "DevOps",
-                "JavaScript",
                 "Python",
-                "PyPI Ecosystem",
-                "Open Source Dev't"
+                "LilyPond (LY)",
+                "GABC"
             ],
             "highlights": [
-                "FAVI is an open source toolkit for Catholic parishes, creative ministries, musicians, and artists."
+                "EdiMeli is a music typesetting toolkit for musicians working with Gregorian notation."
+            ]
+        },
+        {
+            "org_name": "Guild of St. Isidore (TO)",
+            "org_location": "Toronto, Canada",
+            "exp_type": "project",
+            "project_name": "LibRext",
+            "exp_role": "Lead Developer",
+            "start_date": "2025-10-28",
+            "end_date": null,
+            "skills": [
+                "CSS",
+                "Node.js",
+                "NPM workspaces",
+                "System-UI / Theme-UI"
+            ],
+            "highlights": [
+                "LibRext (Librarium Textuum / Library of Frameworks) is a UI design system and component library"
             ]
         }
     ],

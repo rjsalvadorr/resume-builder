@@ -1,14 +1,4 @@
-from .utils import (
-    format_phone_num,
-    sort_exp,
-)
-
-from .utils_md import (
-    build_minimal_md_table,
-    build_resume_exp_md,
-    build_minimal_row_md_table,
-    format_skill_qual_md,
-)
+from .utils import format_phone_num, format_date, sort_exp
 
 
 def build_resume_full_md(resume_info):
@@ -17,51 +7,20 @@ def build_resume_full_md(resume_info):
     # -----
     # Intro
 
-    out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
-    out_file_full_md.write("![](src/resume_builder/icons/icon-shell.svg \"Decorative icon (left)\")  \n")
-    out_file_full_md.write("![](src/resume_builder/icons/icon-merlion.svg \"Decorative icon (right)\")\n\n")
-    out_file_full_md.write(f"#### {resume_info["subtitle"]} {{#subtitle}}\n\n")
+    out_file_full_md.write(f"# {resume_info["name"].upper()}\n\n")
+    out_file_full_md.write(f"### {resume_info["subtitle"].upper()}\n\n")
 
     # ------------
     # Contact Info
 
-    num_break = 3
-    contact_cells = []
-    contact_cells_row_idx = -1
-    for contact_idx in range(len(resume_info["contact_info"])):
-        contact = resume_info["contact_info"][contact_idx]
-        if contact_idx % num_break == 0:
-            contact_cells.append([])
-            contact_cells_row_idx += 1
-        link = contact["info"]
+    for contact in resume_info["contact_info"]:
         copy = contact["info"].replace("https://", "")
-        contact_icon_src = "src/resume_builder/icons/generic.svg"
 
-        if contact["type"] == "website":
-            contact_icon_src = "src/resume_builder/icons/user-circle.svg"
-        elif contact["type"] == "email":
-            link = f"mailto:{contact["info"] }"
-            contact_icon_src = "src/resume_builder/icons/email.svg"
-        elif contact["type"] == "phone":
-            link = f"tel:{format_phone_num(contact["info"], "html")}"
+        is_phone = contact["type"] == "phone"
+        if is_phone:
             copy = format_phone_num(contact["info"])
-            contact_icon_src = "src/resume_builder/icons/phone.svg"
-        elif contact["type"] == "github":
-            copy = contact["info"].replace("https://github.com/", "")
-            contact_icon_src = "src/resume_builder/icons/github.svg"
-        elif contact["type"] == "linkedin":
-            copy = contact["info"].replace("https://linkedin.com/in/", "")
-            contact_icon_src = "src/resume_builder/icons/linkedin.svg"
 
-        contact_alt = f"Icon ({contact["type"]})"
-        contact_icon = f'![{contact_alt}]({contact_icon_src} "{contact_alt}")'
-        contact_cells[contact_cells_row_idx].append(
-            f"{contact_icon}&nbsp; [{copy}]({link})"
-        )
-
-    contacts_table = build_minimal_md_table(contact_cells)
-
-    out_file_full_md.write(contacts_table)
+        out_file_full_md.write(f"{copy}  \n")
     out_file_full_md.write("\n")
 
     # ------------
@@ -73,13 +32,10 @@ def build_resume_full_md(resume_info):
     # ------------
     # Skills & Qualifications
 
-    out_file_full_md.write(f"## Skills & Qualifications {{#skills-quals}}\n\n")
+    out_file_full_md.write(f"## Skills & Qualifications\n\n")
 
-    skill_cells = []
     for skill in resume_info["skills_qualifications"]:
-        skill_cells.append(format_skill_qual_md(skill))
-    skills_table = build_minimal_row_md_table(skill_cells)
-    out_file_full_md.write(skills_table)
+        out_file_full_md.write(f"- {skill}\n")
     out_file_full_md.write("\n")
 
     # ------------
@@ -88,7 +44,19 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Technical Experience\n\n")
 
     for work_exp in sorted(resume_info["work_experience"], key=sort_exp, reverse=True):
-        build_resume_exp_md(work_exp, out_file_full_md)
+        out_file_full_md.write(f"### {work_exp["exp_role"]} — _{work_exp["org_name"]}_\n\n")
+
+        start_date_str = format_date(work_exp["start_date"])
+        end_date_str = (
+            "Present" if not work_exp["end_date"] else format_date(work_exp["end_date"])
+        )
+        out_file_full_md.write(f"**{start_date_str} — {end_date_str}** &nbsp; &nbsp; // &nbsp; &nbsp; {work_exp["org_location"]}  \n")
+        out_file_full_md.write(
+            f"**Key technologies** — {', '.join(work_exp["skills"])}\n\n"
+        )
+        for highlight in work_exp["highlights"]:
+            out_file_full_md.write(f"- {highlight}\n")
+        out_file_full_md.write("\n")
 
     # ------------
     # Projects
@@ -96,7 +64,18 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Projects\n\n")
 
     for proj_exp in sorted(resume_info["projects"], key=sort_exp, reverse=True):
-        build_resume_exp_md(proj_exp, out_file_full_md)
+        out_file_full_md.write(
+            f"### {proj_exp["project_name"]} — _{proj_exp["org_name"]}_\n\n"
+        )
+        start_date_str = format_date(proj_exp["start_date"])
+        end_date_str = (
+            "Present" if not proj_exp["end_date"] else format_date(proj_exp["end_date"])
+        )
+        out_file_full_md.write(f"**{start_date_str} — {end_date_str}** &nbsp; &nbsp; // &nbsp; &nbsp; {proj_exp["org_location"]}  \n")
+        out_file_full_md.write(f"**Key skills** — {', '.join(proj_exp["skills"])}\n\n")
+        for highlight in proj_exp["highlights"]:
+            out_file_full_md.write(f"- {highlight}\n")
+        out_file_full_md.write("\n")
 
     # ------------
     # Technical Education
@@ -104,7 +83,20 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Education\n\n")
 
     for edu_exp in sorted(resume_info["education"], key=sort_exp, reverse=True):
-        build_resume_exp_md(edu_exp, out_file_full_md)
+        out_file_full_md.write(
+            f"### {edu_exp["education_cred"]} — _{edu_exp["org_name"]}_\n\n"
+        )
+        start_date_str = format_date(edu_exp["start_date"])
+        end_date_str = (
+            "Present" if not edu_exp["end_date"] else format_date(edu_exp["end_date"])
+        )
+        out_file_full_md.write(f"**{start_date_str} — {end_date_str}** &nbsp; &nbsp; // &nbsp; &nbsp; {edu_exp["org_location"]}  \n")
+        out_file_full_md.write(
+            f"**Key skills** — {', '.join(edu_exp["skills"])}\n\n"
+        )
+        for highlight in edu_exp["highlights"]:
+            out_file_full_md.write(f"- {highlight}\n")
+        out_file_full_md.write("\n")
 
     # ------------
     # Volunteering
@@ -112,7 +104,20 @@ def build_resume_full_md(resume_info):
     out_file_full_md.write(f"## Volunteering\n\n")
 
     for vol_exp in sorted(resume_info["volunteering"], key=sort_exp, reverse=True):
-        build_resume_exp_md(vol_exp, out_file_full_md)
+        out_file_full_md.write(
+            f"{vol_exp["exp_role"]} — {vol_exp["org_name"]}\n\n"
+        )
+        start_date_str = format_date(vol_exp["start_date"])
+        end_date_str = (
+            "Present" if not vol_exp["end_date"] else format_date(vol_exp["end_date"])
+        )
+        out_file_full_md.write(f"**{start_date_str} — {end_date_str}** &nbsp; &nbsp; // &nbsp; &nbsp; {vol_exp["org_location"]}  \n")
+        out_file_full_md.write(
+            f"**Key skills** — {', '.join(vol_exp["skills"])}\n\n"
+        )
+        for highlight in vol_exp["highlights"]:
+            out_file_full_md.write(f"- {highlight}\n")
+        out_file_full_md.write("\n")
 
     # ------------
     # About Me

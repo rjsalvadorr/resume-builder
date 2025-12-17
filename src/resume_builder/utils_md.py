@@ -151,6 +151,43 @@ def build_resume_exp_md(exp, openfile):
     openfile.write("\n")
 
 
+def build_resume_exp_md_pandoc(exp, openfile):
+    exp_title = ""
+
+    if exp["exp_type"] == "work":
+        exp_title = format_exp_title_md(exp["exp_role"])
+    elif exp["exp_type"] == "education":
+        exp_title = format_exp_title_md(exp["education_cred"])
+    elif exp["exp_type"] == "project":
+        exp_title = format_exp_title_md(exp["project_name"])
+    else:
+        exp_title = format_exp_title_md(exp["exp_role"])
+
+    openfile.write(f"### {exp_title} — _{exp["org_name"]}_ {{.exp-heading}}\n\n")
+
+    start_date_str = format_date(exp["start_date"])
+    end_date_str = "Present" if not exp["end_date"] else format_date(exp["end_date"])
+
+    skill_header = "Core skills"
+    # skill_header = "Core technologies" if exp["exp_type"] == "work" else "Core skills"
+    if exp["exp_type"] == "work":
+        skill_header = "Core technologies"
+    elif exp["exp_type"] == "volunteering":
+        skill_header = "Skills"
+
+    cells = [
+        [
+            f"_**{start_date_str} — {end_date_str}**\n{exp["org_location"]}_",
+            f"_**{skill_header}** — {', '.join(exp["skills"])}_",
+        ]
+    ]
+    openfile.write(f"{build_multiline_md_table(cells)}\n")
+
+    for highlight in exp["highlights"]:
+        openfile.write(f"- {highlight}\n")
+    openfile.write("\n")
+
+
 def build_minimal_row_md_table(cells):
     """Builds a minimal (headless) one-row table."""
     borders = []

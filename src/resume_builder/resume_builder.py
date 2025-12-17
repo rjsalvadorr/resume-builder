@@ -4,6 +4,7 @@ import json
 from . import (
     builder_html,
     builder_md,
+    builder_md_pandoc,
     builder_pdf,
     builder_txt,
 )
@@ -13,6 +14,7 @@ def build_resume_full(complete_resume_info):
     builder_txt.build_resume_full_txt(complete_resume_info["resume"])
     # the HTML builder uses the markdown file as its data source
     builder_md.build_resume_full_md(complete_resume_info["resume"])
+    builder_md_pandoc.build_resume_full_md_pandoc(complete_resume_info["resume"])
     builder_html.build_resume_full_html()
     builder_pdf.build_resume_full_pdf()
 

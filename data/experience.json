@@ -59,9 +59,9 @@
                 "HTML/CSS"
             ],
             "highlights": [
-                "Worked on Causeworks, a research app for understanding scenarios through graph analysis.",
-                "Integrated external analysis modules, such as a Python module from Virginia Tech researchers",
-                "Reworked the front-end to align the UI to our design system, and render data more effectively."
+                "Worked on Causeworks, a research app for understanding scenarios through network graph analysis. Implemented as a Docker cluster with an Ember front-end and ML models running in the back-end.",
+                "Integrated external Python modules built in collaboration with CS researchers from Virginia Tech.",
+                "Reworked the front-end to align UI components to our design system, and render data effectively."
             ]
         },
         {
@@ -82,7 +82,7 @@
                 "AEM"
             ],
             "highlights": [
-                "Helped lay the technical foundations of a Next.js + AEM app for a leading healthcare provider."
+                "Worked on a Next.js app for a leading healthcare provider, smoothly integrating AEM with modern JS."
             ]
         },
         {
@@ -103,8 +103,8 @@
             ],
             "highlights": [
                 "Worked on Autodesk Takeoff, an online construction estimation tool for 2D sheets and 3D models.",
-                "Enhanced and maintained the React front-end and 3D model viewer.",
-                "Leveraged in-house design system and component library to build and extend UI modules."
+                "Enhanced the React front-end and Three.js-based 3D model viewer's filtering. This gave users more options for ensuring accuracy, double-checking records, and speeding up their workflows.",
+                "Upgraded team's UI component library to conform with the organization's high technical standards."
             ]
         },
         {
@@ -196,26 +196,25 @@
                 "CAD/CAM Software"
             ],
             "highlights": [
-                "sw-jscad is an open source library that extends JSCAD to create 2D and 3D designs with JavaScript."
+                "sw-jscad is an open source library that uses JSCAD/Three.js to create 2D and 3D designs with JavaScript."
             ]
         },
         {
-            "org_name": "Guild of St. Isidore (TO)",
+            "org_name": "NivoTutoring",
             "org_location": "Toronto, Canada",
             "exp_type": "project",
-            "project_name": "EdiMeli",
+            "project_name": "Tutoring / E-Commerce Platform",
             "exp_role": "Lead Developer",
-            "start_date": "2025-06-02",
-            "end_date": null,
+            "start_date": "2025-10-15",
+            "end_date": "2025-11-28",
             "skills": [
-                "Python",
-                "LilyPond (LY)",
-                "GABC",
-                "Modern Music Theory",
-                "Historical Music Theory"
+                "Next.js",
+                "JWT/JOSE Authentication",
+                "Prisma ORM",
+                "PostgreSQL"
             ],
             "highlights": [
-                "EdiMeli is a music typesetting toolkit for musicians working with Gregorian notation (square notes)."
+                "NivoTutoring is an online tutoring platform featuring easy access to one-on-one education."
             ]
         },
         {

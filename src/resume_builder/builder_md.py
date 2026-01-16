@@ -41,7 +41,7 @@ def build_resume_full_md(resume_info, build_opts):
     out_file_full_md.write(f"## Skills & Qualifications\n\n")
 
     for skill in resume_info["skills_qualifications"]:
-        out_file_full_md.write(f"- {skill}\n")
+        out_file_full_md.write(f"{skill}\n\n")
     out_file_full_md.write("\n")
 
     # ------------

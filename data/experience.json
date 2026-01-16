@@ -30,8 +30,8 @@
             "start_date": "2017-06-15",
             "end_date": "2019-02-15",
             "skills": [
-                "JavaScript",
                 "React",
+                "JavaScript",
                 ".NET",
                 "HTML/CSS",
                 "SQL Server",
@@ -75,8 +75,8 @@
                 "React",
                 "Next.js",
                 "Nx",
+                "TypeScript",
                 "JavaScript",
-                "Typescript",
                 "HTML/CSS",
                 "Storybook",
                 "AEM"
@@ -95,7 +95,7 @@
             "skills": [
                 "React",
                 "Node.js",
-                "Typescript",
+                "TypeScript",
                 "JavaScript",
                 "HTML/CSS",
                 "Storybook",
@@ -208,10 +208,13 @@
             "start_date": "2025-10-15",
             "end_date": "2025-11-28",
             "skills": [
+                "React",
                 "Next.js",
-                "JWT/JOSE Authentication",
+                "JavaScript",
+                "TypeScript",
                 "Prisma ORM",
-                "PostgreSQL"
+                "PostgreSQL",
+                "JWT/JOSE Authentication"
             ],
             "highlights": [
                 "NivoTutoring is an online tutoring platform featuring easy access to one-on-one education."
